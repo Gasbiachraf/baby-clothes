@@ -1,5 +1,21 @@
 
 import React, { createContext, useState } from "react"
+import product1 from "../assets/img/image 11.png"
+import product2 from "../assets/img/image 11 (1).png"
+import product3 from "../assets/img/image 11 (2).png"
+import product4 from "../assets/img/image 11 (3).png"
+import product5 from "../assets/img/image 11 (4).png"
+import product6 from "../assets/img/image 11 (5).png"
+import product7 from "../assets/img/image 11 (6).png"
+import product8 from "../assets/img/image 11 (7).png"
+import product9 from "../assets/img/image 11 (9).png"
+import product10 from "../assets/img/image 11 (10).png"
+import product11 from "../assets/img/image 11 (11).png"
+import product12 from "../assets/img/image 11 (12).png"
+import product13 from "../assets/img/image 11 (13).png"
+import product14 from "../assets/img/image 11 (14).png"
+import product15 from "../assets/img/image 11 (15).png"
+import product16 from "../assets/img/image 11 (16).png"
 
 
 export const MyContext = createContext()
@@ -8,14 +24,174 @@ export const MyProvider = ({ children }) => {
     
     // ^^ database creation :
 
-    const [test, setTest] = useState("database1 text")
-    const [test2 , setTest2] = useState(["database array"])
+    const[product , setProduct] =useState([
+        {
+            id : 1,
+            productName : "Blocks shape-sorting Toy",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product1,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 2,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product2,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 3,
+            productName : "Magna etiam tempor orci",
+            price : 39,
+            oldprice : 0 ,
+            category : "",
+            image : product3,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 4,
+            productName : "Magna etiam tempor orci",
+            price : 39,
+            oldprice : 0 ,
+            category : "",
+            image : product4,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 5,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product5,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 6,
+            productName : "Magna etiam tempor orci",
+            price : 39.00,
+            oldprice : 0 ,
+            category : "",
+            image : product6,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 7,
+            productName : "Hape scoot-around",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product7,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 8,
+            productName : "Magna etiam tempor orci",
+            price : 39.00,
+            oldprice : 0 ,
+            category : "",
+            image : product8,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 9,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product9,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 10,
+            productName : "Hape scoot-around",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product10,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 11,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product11,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 12,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product12,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 13,
+            productName : "Wooden sortion Toys",
+            price : 39.00,
+            oldprice : 0 ,
+            category : "",
+            image : product13,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 14,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product14,
+            rate : 5 , 
+            Stock  : true
+        },
+        {
+            id : 15,
+            productName : "Magna etiam tempor orci",
+            price : 29.00,
+            oldprice : 39.00 ,
+            category : "sale",
+            image : product15,
+            rate : 0 , 
+            Stock  : true
+        },
+        {
+            id : 16,
+            productName : "Magna etiam tempor orci",
+            price : 39.00,
+            oldprice : 0 ,
+            category : "",
+            image : product16,
+            rate : 5 , 
+            Stock  : true
+        }
+    ])
     
 
     return (
         <>
 
-            <MyContext.Provider value={ [test, setTest , test2 , setTest2] } >
+            <MyContext.Provider value={ [product , setProduct] } >
                 {children}
             </MyContext.Provider>
 
