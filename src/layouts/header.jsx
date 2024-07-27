@@ -9,6 +9,7 @@ import { TbMenu2 } from "react-icons/tb";
 import { MdClose } from "react-icons/md";
 import { SlBasket } from "react-icons/sl";
 import { IoSearchOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 
@@ -38,11 +39,11 @@ const Header = () => {
                     className={`flex gap-16 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-5 ${isOpen ? "max-[430px]:top-20 shadow-lg p-2  bg-white" : "max-[430px]:-top-96"
                         }`}
                 >
-                    <p className="cursor-pointer hover:text-teta">Home</p>
-                    <p className="cursor-pointer hover:text-teta">Shop</p>
-                    <p className="cursor-pointer hover:text-teta">Pages</p>
-                    <p className="cursor-pointer hover:text-teta">Blog</p>
-                    <p className="cursor-pointer hover:text-teta">Contact</p>
+                    <Link to={"/"} className="cursor-pointer hover:text-teta">Home</Link>
+                    <Link to={"/shop"} className="cursor-pointer hover:text-teta">Shop</Link>
+                    <Link to={"/pages"} className="cursor-pointer hover:text-teta">Pages</Link>
+                    <Link to={"/blog"} className="cursor-pointer hover:text-teta">Blog</Link>
+                    <Link to={"/contact"} className="cursor-pointer hover:text-teta">Contact</Link>
                 </div>
                 <div className="flex gap-4 items-center">
                     <div>

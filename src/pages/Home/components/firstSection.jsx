@@ -79,9 +79,6 @@ export const FirstSectionHome = () => {
                     {
                         product.map((element, id) =>
                             <>
-
-
-
                                 <div className={element.id > 8 ? "hidden" : ""}>
                                     <div className=' rounded-lg  lg:w-[22vw]  relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
@@ -119,13 +116,6 @@ export const FirstSectionHome = () => {
                         )
                     }
                 </div>
-
-
-
-
-
-
-
             </section>
 
             <section >
