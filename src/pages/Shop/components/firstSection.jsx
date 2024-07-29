@@ -24,7 +24,7 @@ import { MyContext } from '../../../utils/ContextProvider';
 export const FirstSectionShop = () => {
 
     const [product, setProduct] = useContext(MyContext)
-    const [shopbydefault, setShopbydefault] = useState(false)
+    const [shopbydefault, setShopbydefault] = useState(true)
 
     const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
     let pproduct = [...productrate5.slice(0, 3)]
@@ -115,8 +115,8 @@ export const FirstSectionShop = () => {
                             <h1 className='text-3xl font-bold'>Educational Toys</h1>
                             <div className='flex justify-between pt-6'>
                                 <div className='flex gap-4 items-center '>
-                                    <CgMenuGridR onClick={()=>setShopbydefault(true)} className={shopbydefault ? "text-3xl text-blue-600" : "text-3xl"}/>
-                                    <TfiMenuAlt onClick={()=>setShopbydefault(false)} className={!shopbydefault ? "text-3xl text-blue-600" : "text-3xl"} />
+                                    <CgMenuGridR onClick={() => setShopbydefault(true)} className={shopbydefault ? "text-3xl text-blue-600" : "text-3xl"} />
+                                    <TfiMenuAlt onClick={() => setShopbydefault(false)} className={!shopbydefault ? "text-3xl text-blue-600" : "text-3xl"} />
 
                                 </div>
                                 <div>
@@ -140,7 +140,7 @@ export const FirstSectionShop = () => {
                                                         </div>
                                                     </div>
                                                     <div className='absolute left-2 top-2'>
-                                                        <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-white font-semibold" : "hidden "}>SALE</p>
+                                                        <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-white text-sm font-semibold" : "hidden "}>SALE</p>
                                                     </div>
                                                     <img className='lg:w-[20vw]' src={element.image} alt="" />
                                                     <p className='pt-4 font-medium text-xl'>{element.productName}</p>
@@ -157,7 +157,10 @@ export const FirstSectionShop = () => {
                                                 </div>
                                             </div>
                                             <div className={!shopbydefault ? (element.id > 6 ? "hidden" : "") : "hidden"}>
-                                                <div className='flex gap-6'>
+                                                <div className='flex gap-6 relative'>
+                                                    <div className='absolute left-3 top-3'>
+                                                        <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 text-sm px-3 text-white font-semibold" : "hidden "}>SALE</p>
+                                                    </div>
                                                     <img className='lg:w-[20vw] lg:h-[38vh]' src={element.image} alt="" />
                                                     <div className='flex flex-col'>
                                                         <h1 className='text-2xl font-semibold pb-2'>{element.productName}</h1>

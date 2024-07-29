@@ -88,7 +88,7 @@ export const FirstSectionHome = () => {
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
-                                            <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-white font-semibold" : "hidden "}>SALE</p>
+                                            <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
 
                                         </div>
                                         <img className='lg:w-[22vw]' src={element.image} alt="" />
@@ -140,7 +140,7 @@ export const FirstSectionHome = () => {
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
-                                            <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-white font-semibold" : "hidden "}>SALE</p>
+                                            <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
                                         </div>
                                         <img className='lg:w-[22vw]' src={element.image} alt="" />
                                         <p className='pt-4 font-medium text-xl'>{element.productName}</p>
@@ -162,9 +162,6 @@ export const FirstSectionHome = () => {
                 </div>
             </section>
             
-            <section>
-
-            </section>
 
             <section>
                 <h1 className='text-2xl  font-bold text-center'>Recent photoshoots</h1>
@@ -194,7 +191,7 @@ export const FirstSectionHome = () => {
                     <p className='lg:w-[54vw] text-2xl text-center'>Get 15% off your first purchase! Plus,  be the first to know about sales, new product launches, and exlusive offres!</p>
                     <div className='py-8'>
                         <form action="">
-                            <input placeholder='Enter your email' type="text" className='border-2 rounded-xl lg:w-[30vw] py-2 px-4 ' />
+                            <input placeholder='Enter your email' type="text" className='border-2 outline-none rounded-xl lg:w-[30vw] py-2 px-4 ' />
                             <input type="submit" className='bg-blue-600 py-2 px-6 rounded-xl text-white lg:ml-4' value={"Join"} />
                         </form>
                     </div>
