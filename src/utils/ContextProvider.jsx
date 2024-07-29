@@ -28,16 +28,18 @@ export const MyProvider = ({ children }) => {
         {
             id : 1,
             productName : "Blocks shape-sorting Toy",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
             image : product1,
-            rate : 0 , 
+            rate : 5 , 
             Stock  : true
         },
         {
             id : 2,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -48,6 +50,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 3,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39,
             oldprice : 0 ,
             category : "",
@@ -58,6 +61,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 4,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39,
             oldprice : 0 ,
             category : "",
@@ -68,6 +72,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 5,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -78,6 +83,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 6,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39.00,
             oldprice : 0 ,
             category : "",
@@ -88,6 +94,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 7,
             productName : "Hape scoot-around",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -98,6 +105,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 8,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39.00,
             oldprice : 0 ,
             category : "",
@@ -108,6 +116,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 9,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -118,6 +127,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 10,
             productName : "Hape scoot-around",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -128,6 +138,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 11,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -138,6 +149,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 12,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -148,6 +160,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 13,
             productName : "Wooden sortion Toys",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39.00,
             oldprice : 0 ,
             category : "",
@@ -158,6 +171,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 14,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -168,6 +182,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 15,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
@@ -178,6 +193,7 @@ export const MyProvider = ({ children }) => {
         {
             id : 16,
             productName : "Magna etiam tempor orci",
+            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
             price : 39.00,
             oldprice : 0 ,
             category : "",

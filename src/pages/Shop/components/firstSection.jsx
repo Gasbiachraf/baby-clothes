@@ -11,16 +11,20 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
 import { TfiMenuAlt } from "react-icons/tfi";
+import { TbExchange } from "react-icons/tb";
 
-// import image1 from "../../../assets/img/"
+import image1 from "../../../assets/img/refresh_major.svg"
 // import image2 from "../../../assets/img/"
 
 import { FaPlus } from "react-icons/fa6";
 import { MyContext } from '../../../utils/ContextProvider';
 
+
+
 export const FirstSectionShop = () => {
 
     const [product, setProduct] = useContext(MyContext)
+    const [shopbydefault, setShopbydefault] = useState(false)
 
     const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
     let pproduct = [...productrate5.slice(0, 3)]
@@ -111,12 +115,9 @@ export const FirstSectionShop = () => {
                             <h1 className='text-3xl font-bold'>Educational Toys</h1>
                             <div className='flex justify-between pt-6'>
                                 <div className='flex gap-4 items-center '>
-                                    <CgMenuGridR className='text-3xl text-blue-600' />
-                                    <TfiMenuAlt className='text-3xl' />
-                                    {/* <div className='flex items-center '>
-                                        <p className='lg:pl-4  font-semibold text-xl'>Default sorting </p>
-                                        <IoIosArrowDown className='lg:pt-2 text-3xl'  />
-                                    </div> */}
+                                    <CgMenuGridR onClick={()=>setShopbydefault(true)} className={shopbydefault ? "text-3xl text-blue-600" : "text-3xl"}/>
+                                    <TfiMenuAlt onClick={()=>setShopbydefault(false)} className={!shopbydefault ? "text-3xl text-blue-600" : "text-3xl"} />
+
                                 </div>
                                 <div>
 
@@ -126,11 +127,11 @@ export const FirstSectionShop = () => {
 
 
                             </div>
-                            <div className='flex flex-wrap  gap-6 py-10'>
+                            <div className={shopbydefault ? "flex flex-wrap  gap-6 py-10" : "flex flex-col  gap-8 py-10"}>
                                 {
                                     product.map((element, id) =>
                                         <>
-                                            <div className={element.id > 9 ? "hidden" : ""}>
+                                            <div className={shopbydefault ? (element.id > 9 ? "hidden" : "") : "hidden"}>
                                                 <div className=' rounded-lg  lg:w-[20vw]  relative'  >
                                                     <div className='absolute right-3  top-3 text-gray-400 '>
                                                         <div className='flex flex-col gap-2'>
@@ -155,6 +156,42 @@ export const FirstSectionShop = () => {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className={!shopbydefault ? (element.id > 6 ? "hidden" : "") : "hidden"}>
+                                                <div className='flex gap-6'>
+                                                    <img className='lg:w-[20vw] lg:h-[38vh]' src={element.image} alt="" />
+                                                    <div className='flex flex-col'>
+                                                        <h1 className='text-2xl font-semibold pb-2'>{element.productName}</h1>
+                                                        <p className='pb-4'>{element.description}</p>
+                                                        <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
+                                                        <div className='pt-4 flex gap-1'>
+                                                            {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
+                                                            {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
+                                                            {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
+                                                            {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
+                                                            {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
+                                                        </div>
+                                                        <div className=' flex pt-4 gap-4'>
+                                                            <div className='flex items-center gap-4 bg-blue-500 rounded-xl text-white px-4 py-2'>
+                                                                <SlBasket className='text-2xl' />
+                                                                <p>Add to card</p>
+                                                            </div>
+                                                            <div className='border rounded-xl px-4 py-2'>
+                                                                <CiHeart className='text-3xl' />
+                                                            </div>
+                                                            <div className='border rounded-xl px-4 py-2'>
+                                                                <TbExchange className='text-3xl rotate-90' />
+                                                                {/* <img className='flex items-center' src={image1} alt="" /> */}
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
                                         </>
                                     )
                                 }
