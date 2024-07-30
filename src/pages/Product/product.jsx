@@ -23,7 +23,7 @@ import { MyContext } from '../../utils/ContextProvider';
 
 export const ProductPage = () => {
 
-    const [product, setProduct] = useContext(MyContext)
+    const [product , setProduct , panier , setPanier] = useContext(MyContext)
     const navigate = useNavigate()
     let [quantity, setQuantity] = useState(1)
     // let [achraf, setAchraf] = useState(0)

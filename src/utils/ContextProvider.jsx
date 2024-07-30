@@ -34,7 +34,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product1,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 2,
@@ -45,7 +46,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product2,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 3,
@@ -56,7 +58,8 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product3,
             rate : 0 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 4,
@@ -67,7 +70,8 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product4,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 5,
@@ -78,7 +82,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product5,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 6,
@@ -89,18 +94,20 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product6,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 7,
             productName : "Hape scoot-around",
             description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 290.00,
+            price : 29.00,
             oldprice : 39.00 ,
             category : "sale",
             image : product7,
             rate : 0 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 8,
@@ -111,7 +118,8 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product8,
             rate : 0 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 9,
@@ -122,7 +130,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product9,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 10,
@@ -133,7 +142,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product10,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 11,
@@ -144,7 +154,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product11,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 12,
@@ -155,7 +166,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product12,
             rate : 0 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 13,
@@ -166,7 +178,8 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product13,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 14,
@@ -177,7 +190,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product14,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 15,
@@ -188,7 +202,8 @@ export const MyProvider = ({ children }) => {
             category : "sale",
             image : product15,
             rate : 0 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         },
         {
             id : 16,
@@ -199,15 +214,18 @@ export const MyProvider = ({ children }) => {
             category : "",
             image : product16,
             rate : 5 , 
-            Stock  : true
+            Stock  : true ,
+            quantitybuy : 1
         }
     ])
+
+    const[panier , setPanier] = useState([])
     
 
     return (
         <>
 
-            <MyContext.Provider value={ [product , setProduct] } >
+            <MyContext.Provider value={ [product , setProduct , panier , setPanier] } >
                 {children}
             </MyContext.Provider>
 

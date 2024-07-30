@@ -25,12 +25,34 @@ import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 export const FirstSectionHome = () => {
-    const [product, setProduct] = useContext(MyContext)
+    const [product, setProduct, panier, setPanier] = useContext(MyContext)
 
     const navigate = useNavigate();
 
-    const productrate5 = product.filter(element=>(element.rate == 5 && element.category == "sale" ))
-    let pproduct = [...productrate5.slice(0,4)]
+    const arrayPanier = [...panier]
+
+    console.log(panier);
+    const AddToCard = (parames) => {
+        let productAdd = product.filter(element => element.id == parames)
+        let questionPanier = panier.filter(element => element.id == parames)
+        if (questionPanier.length == 0) {
+            arrayPanier.push(productAdd[0])
+            setPanier(arrayPanier)
+            console.log(panier);
+        } else {
+            // alert('product already exist')
+            let productplus = panier.filter(element => element.id == parames)
+            productplus[0].quantitybuy++
+            console.log(panier);
+        }
+        // setOpenModal(true)
+        // setNameProduct(productAdd[0].text)
+
+    }
+    console.log(panier);
+
+    const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
+    let pproduct = [...productrate5.slice(0, 4)]
 
 
     return (
@@ -40,7 +62,7 @@ export const FirstSectionHome = () => {
                 <div className='w-[50vw] absolute end-0 top-24'>
                     <h1 className=' lg:pr-24 lg:pt-16 lg:text-5xl'>Play, learn, & grow!</h1>
                     <p className='pt-6 pb-16'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <button className='bg-yellow-400 py-3 px-8 rounded-full'>Shop now</button>
+                    <button onClick={()=>navigate('/shop')} className='bg-yellow-400 py-3 px-8 rounded-full'>Shop now</button>
                 </div>
             </section>
 
@@ -82,20 +104,20 @@ export const FirstSectionHome = () => {
                     {
                         product.map((element, id) =>
                             <>
-                                <div onClick={()=>{navigate(`/product/${element.id}`)}} className={element.id > 8 ? "hidden" : ""}>
+                                <div  className={element.id > 8 ? "hidden" : ""}>
                                     <div className=' rounded-lg  lg:w-[22vw]  relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
-                                            <div className='flex flex-col gap-2'>
+                                            <div className='flex flex-col gap-2 z-10'>
                                                 <CiHeart className='text-3xl' />
-                                                <SlBasket className='text-2xl' />
+                                                <SlBasket onClick={()=>AddToCard(element.id)} className='text-2xl z-10' />
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
                                             <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
 
                                         </div>
-                                        <img className='lg:w-[22vw]' src={element.image} alt="" />
-                                        <p className='pt-4 font-medium text-xl'>{element.productName}</p>
+                                        <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[22vw]' src={element.image} alt="" />
+                                        <p onClick={() => { navigate(`/product/${element.id}`) }} className='pt-4 font-medium text-xl'>{element.productName}</p>
                                         <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                         <div className="">
                                             <div className='pt-4 flex gap-1'>
@@ -122,10 +144,10 @@ export const FirstSectionHome = () => {
             </section>
 
             <section >
-                <div className='flex flex-col items-center'> 
+                <div className='flex flex-col items-center'>
                     <div className='lg:w-[90vw] flex gap-8 py-16'>
                         <img className='lg:w-100 ' src={image7} alt="" />
-                        <img onClick={()=>navigate('/shop')} className='lg:w-100 ' src={image8} alt="" />
+                        <img onClick={() => navigate('/shop')} className='lg:w-100 ' src={image8} alt="" />
                     </div>
                     <h1 className='text-2xl font-bold'>Customer loves</h1>
                     <p>Popular product</p>
@@ -134,7 +156,7 @@ export const FirstSectionHome = () => {
                     {
                         pproduct.map((element, id) =>
                             <>
-                                <div onClick={()=>{navigate(`/product/${element.id}`)}}>
+                                <div onClick={() => { navigate(`/product/${element.id}`) }}>
                                     <div className=' rounded-lg  lg:w-[22vw]  relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2'>
@@ -164,7 +186,7 @@ export const FirstSectionHome = () => {
                     }
                 </div>
             </section>
-            
+
 
             <section>
                 <h1 className='text-2xl  font-bold text-center'>Recent photoshoots</h1>

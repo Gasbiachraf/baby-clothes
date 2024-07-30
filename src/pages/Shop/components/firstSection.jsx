@@ -26,7 +26,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const FirstSectionShop = () => {
 
-    const [product, setProduct] = useContext(MyContext)
+    const [product , setProduct , panier , setPanier] = useContext(MyContext)
     const [shopbydefault, setShopbydefault] = useState(true)
     const navigate = useNavigate()
 
