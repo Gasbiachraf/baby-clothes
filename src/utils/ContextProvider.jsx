@@ -95,7 +95,7 @@ export const MyProvider = ({ children }) => {
             id : 7,
             productName : "Hape scoot-around",
             description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
+            price : 290.00,
             oldprice : 39.00 ,
             category : "sale",
             image : product7,

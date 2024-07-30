@@ -23,8 +23,11 @@ import { SlBasket } from "react-icons/sl";
 import { CiHeart } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 export const FirstSectionHome = () => {
     const [product, setProduct] = useContext(MyContext)
+
+    const navigate = useNavigate();
 
     const productrate5 = product.filter(element=>(element.rate == 5 && element.category == "sale" ))
     let pproduct = [...productrate5.slice(0,4)]
@@ -79,7 +82,7 @@ export const FirstSectionHome = () => {
                     {
                         product.map((element, id) =>
                             <>
-                                <div className={element.id > 8 ? "hidden" : ""}>
+                                <div onClick={()=>{navigate(`/product/${element.id}`)}} className={element.id > 8 ? "hidden" : ""}>
                                     <div className=' rounded-lg  lg:w-[22vw]  relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2'>
@@ -122,7 +125,7 @@ export const FirstSectionHome = () => {
                 <div className='flex flex-col items-center'> 
                     <div className='lg:w-[90vw] flex gap-8 py-16'>
                         <img className='lg:w-100 ' src={image7} alt="" />
-                        <img className='lg:w-100 ' src={image8} alt="" />
+                        <img onClick={()=>navigate('/shop')} className='lg:w-100 ' src={image8} alt="" />
                     </div>
                     <h1 className='text-2xl font-bold'>Customer loves</h1>
                     <p>Popular product</p>
@@ -131,7 +134,7 @@ export const FirstSectionHome = () => {
                     {
                         pproduct.map((element, id) =>
                             <>
-                                <div>
+                                <div onClick={()=>{navigate(`/product/${element.id}`)}}>
                                     <div className=' rounded-lg  lg:w-[22vw]  relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2'>

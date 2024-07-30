@@ -18,6 +18,9 @@ import image1 from "../../../assets/img/refresh_major.svg"
 
 import { FaPlus } from "react-icons/fa6";
 import { MyContext } from '../../../utils/ContextProvider';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 
@@ -25,6 +28,7 @@ export const FirstSectionShop = () => {
 
     const [product, setProduct] = useContext(MyContext)
     const [shopbydefault, setShopbydefault] = useState(true)
+    const navigate = useNavigate()
 
     const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
     let pproduct = [...productrate5.slice(0, 3)]
@@ -131,8 +135,8 @@ export const FirstSectionShop = () => {
                                 {
                                     product.map((element, id) =>
                                         <>
-                                            <div className={shopbydefault ? (element.id > 9 ? "hidden" : "") : "hidden"}>
-                                                <div className=' rounded-lg  lg:w-[20vw]  relative'  >
+                                            <div   className={shopbydefault ? (element.id > 9 ? "hidden" : "") : "hidden"}>
+                                                <div onClick={()=>{navigate(`/product/${element.id}`) }}  className=' rounded-lg  lg:w-[20vw]  relative'  >
                                                     <div className='absolute right-3  top-3 text-gray-400 '>
                                                         <div className='flex flex-col gap-2'>
                                                             <CiHeart className='text-3xl' />
@@ -157,7 +161,7 @@ export const FirstSectionShop = () => {
                                                 </div>
                                             </div>
                                             <div className={!shopbydefault ? (element.id > 6 ? "hidden" : "") : "hidden"}>
-                                                <div className='flex gap-6 relative'>
+                                                <div onClick={()=>{navigate(`/product/${element.id}`) }}  className='flex gap-6 relative'>
                                                     <div className='absolute left-3 top-3'>
                                                         <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 text-sm px-3 text-white font-semibold" : "hidden "}>SALE</p>
                                                     </div>
