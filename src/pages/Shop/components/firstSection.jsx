@@ -26,7 +26,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const FirstSectionShop = () => {
 
-    const [product , setProduct , panier , setPanier] = useContext(MyContext)
+    const [product , setProduct , panier , setPanier , AddToCard] = useContext(MyContext)
     const [shopbydefault, setShopbydefault] = useState(true)
     const navigate = useNavigate()
 
@@ -95,7 +95,7 @@ export const FirstSectionShop = () => {
                                     pproduct.map((element) => <>
 
                                         <div className='flex items-center gap-2'>
-                                            <img className='lg:w-[35%]' src={element.image} alt="" />
+                                            <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[35%] cursor-pointer' src={element.image} alt="" />
                                             <div className='flex flex-col '>
                                                 <p className='text-lg font-semibold'>{element.productName}</p>
                                                 <p className='font-bold text-xl'>${element.price}.00</p>
@@ -136,18 +136,18 @@ export const FirstSectionShop = () => {
                                     product.map((element, id) =>
                                         <>
                                             <div   className={shopbydefault ? (element.id > 9 ? "hidden" : "") : "hidden"}>
-                                                <div onClick={()=>{navigate(`/product/${element.id}`) }}  className=' rounded-lg  lg:w-[20vw]  relative'  >
+                                                <div   className=' rounded-lg  lg:w-[20vw]  relative'  >
                                                     <div className='absolute right-3  top-3 text-gray-400 '>
                                                         <div className='flex flex-col gap-2'>
                                                             <CiHeart className='text-3xl' />
-                                                            <SlBasket className='text-2xl' />
+                                                            <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl' /></button>
                                                         </div>
                                                     </div>
                                                     <div className='absolute left-2 top-2'>
                                                         <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-white text-sm font-semibold" : "hidden "}>SALE</p>
                                                     </div>
-                                                    <img className='lg:w-[20vw]' src={element.image} alt="" />
-                                                    <p className='pt-4 font-medium text-xl'>{element.productName}</p>
+                                                    <img onClick={()=>{navigate(`/product/${element.id}`) }} className='lg:w-[20vw]' src={element.image} alt="" />
+                                                    <p onClick={()=>{navigate(`/product/${element.id}`) }} className='pt-4 font-medium text-xl'>{element.productName}</p>
                                                     <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                                     <div className="">
                                                         <div className='pt-4 flex gap-1'>
@@ -161,13 +161,13 @@ export const FirstSectionShop = () => {
                                                 </div>
                                             </div>
                                             <div className={!shopbydefault ? (element.id > 6 ? "hidden" : "") : "hidden"}>
-                                                <div onClick={()=>{navigate(`/product/${element.id}`) }}  className='flex gap-6 relative'>
+                                                <div   className='flex gap-6 relative'>
                                                     <div className='absolute left-3 top-3'>
                                                         <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 text-sm px-3 text-white font-semibold" : "hidden "}>SALE</p>
                                                     </div>
-                                                    <img className='lg:w-[20vw] lg:h-[38vh]' src={element.image} alt="" />
+                                                    <img onClick={()=>{navigate(`/product/${element.id}`) }} className='lg:w-[20vw] cursor-pointer lg:h-[38vh]' src={element.image} alt="" />
                                                     <div className='flex flex-col'>
-                                                        <h1 className='text-2xl font-semibold pb-2'>{element.productName}</h1>
+                                                        <h1 onClick={()=>{navigate(`/product/${element.id}`) }} className='text-2xl cursor-pointer font-semibold pb-2'>{element.productName}</h1>
                                                         <p className='pb-4'>{element.description}</p>
                                                         <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                                         <div className='pt-4 flex gap-1'>
@@ -178,7 +178,7 @@ export const FirstSectionShop = () => {
                                                             {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
                                                         </div>
                                                         <div className=' flex pt-4 gap-4'>
-                                                            <div className='flex items-center gap-4 bg-blue-500 rounded-xl text-white px-4 py-2'>
+                                                            <div onClick={() => AddToCard(element.id)} className='flex items-center gap-4 cursor-pointer bg-blue-500 rounded-xl text-white px-4 py-2'>
                                                                 <SlBasket className='text-2xl' />
                                                                 <p>Add to card</p>
                                                             </div>

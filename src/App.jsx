@@ -11,6 +11,7 @@ import { CartPage } from './pages/Cart/cart';
 import { CheckoutPage } from './pages/Checkout/checkout';
 import { ContactPage } from './pages/Contact/conatct';
 import { BlogPage } from './pages/Blog/bolg';
+import { FaqPage } from './pages/Faq/faq';
 function App() {
     return (
 
@@ -24,6 +25,7 @@ function App() {
             <Route path='/checkout' element={<CheckoutPage />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/blog' element={<BlogPage />} />
+            <Route path='/faq' element={<FaqPage />} />
             <Route path='/*' element={<ErrorPage />} />
         </Routes >
         <Footer/>

@@ -56,10 +56,9 @@ const Header = () => {
                 >
                     <Link to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
                     <Link to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
-                    <Link to={"/cart"} className="cursor-pointer hover:text-teta text-lg font-semibold">Cart
-                    </Link>
-                    <Link to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
                     <Link to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
+                    <Link to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
+                    <Link to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
                 </div>
                 <div className="flex gap-4 items-center">
                     <div  onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">

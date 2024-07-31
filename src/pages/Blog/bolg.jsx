@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { FaRegCalendar } from "react-icons/fa6";
 
-import image1 from '../../assets/img/Rectangle 61.png'
+import test from '../../assets/img/Rectangle 61.png'
 import image2 from '../../assets/img/Rectangle 59.png'
 import image3 from '../../assets/img/Rectangle 59 (1).png'
 import image4 from '../../assets/img/Rectangle 59 (2).png'
@@ -14,30 +14,23 @@ import { IoSearchOutline } from "react-icons/io5";
 
 import { FaPlus } from "react-icons/fa6";
 
-
-
-
-
-
 export const BlogPage = () => {
-
-
 
     const [blogstype, setBlogstype] = useState([
         {
-            blogName: "Education and developement"
+            blogName: "Education and developement",
         },
         {
-            blogName: "Toy Safety"
+            blogName: "Toy Safety",
         },
         {
-            blogName: "Toy Trends"
+            blogName: "Toy Trends",
         },
         {
-            blogName: "Customer Stories"
+            blogName: "Customer Stories",
         },
         {
-            blogName: "Events and Promotions"
+            blogName: "Events and Promotions",
         },
     ])
 
@@ -72,6 +65,7 @@ export const BlogPage = () => {
         },
 
     ])
+
     return (
         <>
             <section>
@@ -102,14 +96,14 @@ export const BlogPage = () => {
                                     </>)
                                 }
                             </div>
-                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl '>
-                                <h1 className='text-2xl '>Popular products</h1>
+                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl  '>
+                                <h1 className='text-2xl pb-6 font-semibold '>Recent Posts</h1>
                                 {
                                     blogs.map((element) => <>
 
-                                        <div className='flex items-center gap-2'>
-                                            <div className='lg:w-[60%] '>
-                                                <img className='h-[15vh]  w-[100%]' src={element.image} alt="" />
+                                        <div className={element.id > 3 ? "hidden" : "flex items-center gap-4 pb-2 "}>
+                                            <div className='lg:w-[100%] h-[15vh] '  >
+                                                <img className='h-[15vh] w-[100%]   border rounded-xl ' src={element.image} alt="" />
                                             </div>
                                             <p className='text-xl  font-semibold'>{element.title}</p>
                                         </div>
@@ -129,8 +123,8 @@ export const BlogPage = () => {
                                     <p className='p-2 border rounded-xl'> Tips & Tricks</p>
                                 </div>
                             </div>
-                            <div className=' flex flex-col gap-4 border rounded-2xl  w-[100%] h-[90vh] bg-cover bg-center' style={{ backgroundImage: `url(${image1})` }}>
-
+                            <div className=' flex flex-col gap-4 border rounded-2xl   h-[90vh] ' style={{ backgroundImage: `url(${test})` }}>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deleniti, et placeat molestiae voluptas veritatis quibusdam.
                             </div>
                         </div>
                         <div className='lg:w-[75%]  rounded-2xl flex flex-col gap-6 '>
@@ -148,8 +142,6 @@ export const BlogPage = () => {
                                 </>)
                             }
                         </div>
-
-
                     </div>
                 </div>
             </section >

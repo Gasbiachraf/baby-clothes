@@ -23,14 +23,34 @@ import { MyContext } from '../../utils/ContextProvider';
 
 export const ProductPage = () => {
 
-    const [product , setProduct , panier , setPanier] = useContext(MyContext)
+    const [product, setProduct, panier, setPanier] = useContext(MyContext)
     const navigate = useNavigate()
     let [quantity, setQuantity] = useState(1)
+    let achraf = quantity
     // let [achraf, setAchraf] = useState(0)
     const { idProduct } = useParams();
     const specificProduct = product.filter(element => element.id == idProduct)
     let pproduct = [...product.slice(0, 4)]
 
+
+
+
+    const arrayPanier = [...panier]
+    const AddToCard = (parames) => {
+        let productAdd = product.filter(element => element.id == parames)
+        let questionPanier = panier.filter(element => element.id == parames)
+        if (questionPanier.length == 0) {
+            arrayPanier.push(productAdd[0])
+            setPanier(arrayPanier)
+        } else {
+            let productplus = panier.filter(element => element.id == parames)
+            for (let index = 0; index < quantity ; index++) {
+                productplus[0].quantitybuy++
+            }
+        }
+
+    }
+    setQuantity(quantity)
 
 
 
@@ -80,7 +100,7 @@ export const ProductPage = () => {
                                     </p>
                                     <button onClick={() => setQuantity(quantity + 1)} className='px-4 py-2 text-2xl'><GoPlus /></button>
                                 </div>
-                                <div className='flex items-center gap-4 bg-blue-500 rounded-xl text-white px-4 py-2'>
+                                <div onClick={() => AddToCard(specificProduct[0].id)} className='flex items-center gap-4  cursor-pointer bg-blue-500 rounded-xl text-white px-4 py-2'>
                                     <SlBasket className='text-2xl' />
                                     <p>Add to card</p>
                                 </div>

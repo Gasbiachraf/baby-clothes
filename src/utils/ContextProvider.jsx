@@ -21,211 +21,225 @@ import product16 from "../assets/img/image 11 (16).png"
 export const MyContext = createContext()
 
 export const MyProvider = ({ children }) => {
-    
+
     // ^^ database creation :
 
-    const[product , setProduct] =useState([
+    const [product, setProduct] = useState([
         {
-            id : 1,
-            productName : "Blocks shape-sorting Toy",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product1,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 1,
+            productName: "Blocks shape-sorting Toy",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product1,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 2,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product2,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 2,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product2,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 3,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39,
-            oldprice : 0 ,
-            category : "",
-            image : product3,
-            rate : 0 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 3,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39,
+            oldprice: 0,
+            category: "",
+            image: product3,
+            rate: 0,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 4,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39,
-            oldprice : 0 ,
-            category : "",
-            image : product4,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 4,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39,
+            oldprice: 0,
+            category: "",
+            image: product4,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 5,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product5,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 5,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product5,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 6,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39.00,
-            oldprice : 0 ,
-            category : "",
-            image : product6,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 6,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            image: product6,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 7,
-            productName : "Hape scoot-around",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product7,
-            rate : 0 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 7,
+            productName: "Hape scoot-around",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product7,
+            rate: 0,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 8,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39.00,
-            oldprice : 0 ,
-            category : "",
-            image : product8,
-            rate : 0 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 8,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            image: product8,
+            rate: 0,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 9,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product9,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 9,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product9,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 10,
-            productName : "Hape scoot-around",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product10,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 10,
+            productName: "Hape scoot-around",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product10,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 11,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product11,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 11,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product11,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 12,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product12,
-            rate : 0 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 12,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product12,
+            rate: 0,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 13,
-            productName : "Wooden sortion Toys",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39.00,
-            oldprice : 0 ,
-            category : "",
-            image : product13,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 13,
+            productName: "Wooden sortion Toys",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            image: product13,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 14,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product14,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 14,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product14,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 15,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 29.00,
-            oldprice : 39.00 ,
-            category : "sale",
-            image : product15,
-            rate : 0 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 15,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 29.00,
+            oldprice: 39.00,
+            category: "sale",
+            image: product15,
+            rate: 0,
+            Stock: true,
+            quantitybuy: 1
         },
         {
-            id : 16,
-            productName : "Magna etiam tempor orci",
-            description : "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
-            price : 39.00,
-            oldprice : 0 ,
-            category : "",
-            image : product16,
-            rate : 5 , 
-            Stock  : true ,
-            quantitybuy : 1
+            id: 16,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            image: product16,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
         }
     ])
 
-    const[panier , setPanier] = useState([])
-    
+    const [panier, setPanier] = useState([])
+
+    const arrayPanier = [...panier]
+    const AddToCard = (parames) => {
+        let productAdd = product.filter(element => element.id == parames)
+        let questionPanier = panier.filter(element => element.id == parames)
+        if (questionPanier.length == 0) {
+            arrayPanier.push(productAdd[0])
+            setPanier(arrayPanier)
+        } else {
+            let productplus = panier.filter(element => element.id == parames)
+            productplus[0].quantitybuy++
+        }
+
+    }
+
 
     return (
         <>
 
-            <MyContext.Provider value={ [product , setProduct , panier , setPanier] } >
+            <MyContext.Provider value={[product, setProduct, panier, setPanier , AddToCard]} >
                 {children}
             </MyContext.Provider>
 
