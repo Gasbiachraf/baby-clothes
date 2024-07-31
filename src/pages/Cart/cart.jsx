@@ -19,7 +19,7 @@ export const CartPage = () => {
             <div className='lg:w-[90%]'>
                 <div className='text-2xl pt-10 font-semibold'>
                     <p className='pb-4'>Home /  <span className='text-blue-600 '>Your shopping cart</span></p>
-                    <p className='text-4xl font-bold py-8'>Your Cart</p>
+                    <p id='yourcart' className='text-4xl font-bold py-8'>Your Cart</p>
                 </div>
                 <div className={panier.length == 0 ? "hidden" : "w-[100%]"}>
                     <div className='w-[100%]'>
@@ -33,8 +33,9 @@ export const CartPage = () => {
                             <button className='bg-blue-500 px-6 py-3 rounded-xl text-white text-xl'>Apply</button>
                         </div>
                         <div className="flex gap-4">
-                            <button onClick={()=>navigate('/shop')} className='bg-[#EAEAEA] px-6 py-2 rounded-xl text-xl'>Continue Shopping</button>
-                            <button className='bg-blue-500 px-4 py-2 rounded-xl text-white text-xl'>Update Cart</button>
+                            <button onClick={() => navigate('/shop')} className='bg-[#EAEAEA] px-6 py-2 rounded-xl text-xl'>Continue Shopping</button>
+                            <a href="#yourcart">  <button className='bg-blue-500 px-4 py-2 rounded-xl text-white text-xl'>Update Cart</button>
+                            </a>
                         </div>
                     </div>
                     <div className="flex justify-end w-[100%] py-10">

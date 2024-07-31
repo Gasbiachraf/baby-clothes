@@ -8,7 +8,8 @@ import Header from './layouts/header';
 import Footer from './layouts/footer';
 import { ProductPage } from './pages/Product/product';
 import { CartPage } from './pages/Cart/cart';
-import { Checkout } from './pages/Checkout/checkout';
+import { CheckoutPage } from './pages/Checkout/checkout';
+import { ContactPage } from './pages/Contact/conatct';
 function App() {
     return (
 
@@ -19,7 +20,8 @@ function App() {
             <Route path='/shop' element={<ShopPage />} />
             <Route path='/product/:idProduct' element={<ProductPage />} />
             <Route path='/cart' element={<CartPage />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/checkout' element={<CheckoutPage />} />
+            <Route path='/contact' element={<ContactPage />} />
             <Route path='/*' element={<ErrorPage />} />
         </Routes >
         <Footer/>

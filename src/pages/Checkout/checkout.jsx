@@ -7,7 +7,7 @@ import image4 from "../../../src/assets/img/Discover Card.png"
 import image5 from "../../../src/assets/img/UnionPay.png"
 import { MyContext } from '../../utils/ContextProvider';
 
-export const Checkout = () => {
+export const CheckoutPage = () => {
     const [product, setProduct, panier, setPanier] = useContext(MyContext)
 
     let subtotal = 0
