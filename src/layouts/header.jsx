@@ -59,7 +59,7 @@ const Header = () => {
                     <Link to={"/cart"} className="cursor-pointer hover:text-teta">Cart
                     </Link>
                     <Link to={"/blog"} className="cursor-pointer hover:text-teta">Blog</Link>
-                    <Link to={"/contact"} className="cursor-pointer hover:text-teta">Contact</Link>
+                    <Link to={"/checkout"} className="cursor-pointer hover:text-teta">Contact</Link>
                 </div>
                 <div className="flex gap-4 items-center">
                     <div>
