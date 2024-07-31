@@ -109,7 +109,7 @@ export const FirstSectionHome = () => {
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2 z-10'>
                                                 <CiHeart className='text-3xl' />
-                                                <SlBasket onClick={()=>AddToCard(element.id)} className='text-2xl z-10' />
+                                                <button><SlBasket onClick={()=>AddToCard(element.id)} className='text-2xl z-10 cursor-pointer' /></button>
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>

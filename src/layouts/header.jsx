@@ -49,21 +49,22 @@ const Header = () => {
             {/* navbar  */}
 
             <div className=" flex my-6 justify-around items-center max-[430px]:z-50  max-[430px]:top-0 max-[430px]:inset-x-0 bg-alpha py-5 relative">
-                <img onClick={() => navigate('/')} src={image3} className="lg:w-32 w-24" alt="" />
+                <img onClick={() => navigate('/')} src={image3} className="lg:w-32 w-24 cursor-pointer" alt="" />
                 <div
                     className={`flex gap-16 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-5 ${isOpen ? "max-[430px]:top-20 shadow-lg p-2  bg-white" : "max-[430px]:-top-96"
                         }`}
                 >
-                    <Link to={"/"} className="cursor-pointer hover:text-teta">Home</Link>
-                    <Link to={"/shop"} className="cursor-pointer hover:text-teta">Shop</Link>
-                    <Link to={"/cart"} className="cursor-pointer hover:text-teta">Cart
+                    <Link to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
+                    <Link to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
+                    <Link to={"/cart"} className="cursor-pointer hover:text-teta text-lg font-semibold">Cart
                     </Link>
-                    <Link to={"/blog"} className="cursor-pointer hover:text-teta">Blog</Link>
-                    <Link to={"/contact"} className="cursor-pointer hover:text-teta">Contact</Link>
+                    <Link to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
+                    <Link to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
                 </div>
                 <div className="flex gap-4 items-center">
-                    <div>
-                        <SlBasket onClick={() => setDroppanier(!droppanier)} className="text-xl" />
+                    <div  onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">
+                        <p  className="absolute bg-yellow-500 rounded-full px-1 text-xs top-0 right-0  ">{panier.length}</p>
+                        <SlBasket  className="text-3xl px-1" />
                     </div>
                     <div className=" border-2  border-full rounded-full flex">
                         <form action="" className="flex items-center gap-4">
