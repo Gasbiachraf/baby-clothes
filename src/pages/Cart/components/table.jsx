@@ -82,13 +82,13 @@ export const TableCart = () => {
                                             </td>
                                             <td class="text-lg w-[14%]  text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                                                 <div className='border-2 border-blue-600 flex  text-xl rounded-xl'>
-                                                    <button onClick={() => element.quantitybuy > 1 ? CartMinus(element.id) : 2} className='px-3 py-2 text-xl'><AiOutlineMinus /></button>
-                                                    <p className='border-x-2 border-blue-600 lg:w-[8vh] flex justify-center items-center'>
+                                                    <button onClick={() => element.quantitybuy > 1 ? CartMinus(element.id) : 2} className='lg:px-3 px-2 lg:py-2 py-1 text-xl'><AiOutlineMinus /></button>
+                                                    <p className='border-x-2 border-blue-600 lg:w-[4vw] w-[10vw] flex justify-center items-center'>
                                                         {/* {product[0].quantitybuy} */}
                                                         {element.quantitybuy}
 
                                                     </p>
-                                                    <button onClick={() => CartAdd(element.id) } className='px-3 py-2 text-xl'><GoPlus /></button>
+                                                    <button onClick={() => CartAdd(element.id) } className='lg:px-3 px-2 lg:py-2 py-1 text-xl'><GoPlus /></button>
                                                 </div>
                                             </td>
                                             <td class="text-lg w-[14%]  text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">

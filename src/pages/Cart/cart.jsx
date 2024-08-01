@@ -16,40 +16,40 @@ export const CartPage = () => {
 
     return (
         <section className='flex flex-col items-center'>
-            <div className='lg:w-[90%]'>
+            <div className='lg:w-[90%] w-[95%]'>
                 <div className='text-2xl pt-10 font-semibold'>
                     <p className='pb-4'>Home /  <span className='text-blue-600 '>Your shopping cart</span></p>
                     <p id='yourcart' className='text-4xl font-bold py-8'>Your Cart</p>
                 </div>
                 <div className={panier.length == 0 ? "hidden" : "w-[100%]"}>
-                    <div className='w-[100%]'>
+                    <div className='w-[100%] max-[430px]:overflow-x-scroll'>
                         <TableCart />
                     </div>
-                    <div className=" flex justify-between py-10">
-                        <div className="flex  gap-4">
+                    <div className=" flex lg:flex-row flex-col lg:justify-between items-center lg:py-10 py-4">
+                        <div className="flex  gap-4 lg:pb-0 pb-8 max-[430px]:hidden">
                             <form className='flex justify-center lg:w-[30vw]'>
-                                <input className='outline-none border-2 rounded-xl lg:w-[100%] pl-4 text-xl ' placeholder='Coupon code' type="text" />
+                                <input className='outline-none border-2 rounded-xl lg:w-[100%] pl-4 lg:text-xl  ' placeholder='Coupon code' type="text" />
                             </form>
-                            <button className='bg-blue-500 px-6 py-3 rounded-xl text-white text-xl'>Apply</button>
+                            <button className='bg-blue-500 px-6 py-3 rounded-xl text-white lg:text-xl '>Apply</button>
                         </div>
                         <div className="flex gap-4">
-                            <button onClick={() => navigate('/shop')} className='bg-[#EAEAEA] px-6 py-2 rounded-xl text-xl'>Continue Shopping</button>
-                            <a href="#yourcart">  <button className='bg-blue-500 px-4 py-2 rounded-xl text-white text-xl'>Update Cart</button>
+                            <button onClick={() => navigate('/shop')} className='bg-[#EAEAEA] px-6 py-2 rounded-xl lg:text-xl '>Continue Shopping</button>
+                            <a href="#yourcart">  <button className='bg-blue-500 px-4 py-2 rounded-xl text-white lg:text-xl '>Update Cart</button>
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-end w-[100%] py-10">
+                    <div className="flex lg:justify-end lg:w-[100%] w-[90vw]  py-10 lg:pl-0 pl-1">
                         <div className='border-2 flex flex-col gap-2 rounded-xl lg:w-[48%] p-4'>
                             <p className='text-2xl'>Cart Total</p>
-                            <div className='flex gap-72 pt-4 text-xl'>
+                            <div className='flex lg:gap-72 gap-56 pt-4 text-xl'>
                                 <p>Subtotal</p>
                                 <p className='font-semibold'>${subtotal}.00</p>
                             </div>
-                            <div className='flex gap-80 pt-2 text-xl pb-6'>
+                            <div className='flex lg:gap-80 gap-64 pt-2 text-xl pb-6'>
                                 <p>Total</p>
                                 <p className='font-semibold'>${subtotal + 20}.00</p>
                             </div>
-                            <button onClick={() => navigate('/checkout')} className='bg-[#FFE926] rounded-xl py-6 text-2xl  '>Proceed to checkout</button>
+                            <button onClick={() => navigate('/checkout')} className='bg-[#FFE926] rounded-xl lg:py-6 py-3 text-xl lg:text-2xl   '>Proceed to checkout</button>
 
 
                         </div>

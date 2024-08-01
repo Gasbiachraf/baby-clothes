@@ -32,13 +32,13 @@ export const FaqPage = () => {
 
     return (
         <section className='flex flex-col items-center'>
-            <div className='lg:w-[90%]'>
+            <div className='lg:w-[90%] lg:px-0 px-4 '>
                 <div className='text-2xl pt-10 font-semibold'>
                     <p className='pb-4'>Home /  <span className='text-blue-600 '>FAQ's</span></p>
                     <p id='yourcart' className='text-4xl font-bold pb-8 pt-12'>FAQ'S</p>
                 </div>
                 <div className='pb-16'>
-                    <div className="border-2 rounded-xl px-5 bg-white ">
+                    <div className="border-2 rounded-xl lg:px-5 px-2 bg-white ">
                         {/* <div className="flex flex-col items-center">
                             <h2 className="font-bold text-5xl mt-5 tracking-tight">
                                 FAQ
@@ -57,9 +57,9 @@ export const FaqPage = () => {
                                                     <svg fill="none" height="35" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="35"><path d="M6 9l6 6 6-6"></path>
                                                     </svg>
                                                 </span>
-                                                <span className='pl-2 text-xl'>{element.question}</span>
+                                                <span className='pl-2 lg:text-xl text-lg'>{element.question}</span>
                                             </summary>
-                                            <p className="text-neutral-600 mt-3 group-open:animate-fadeIn pt-2 text-lg">
+                                            <p className="text-neutral-600 mt-3 group-open:animate-fadeIn lg:pt-2 text-lg lg:pl-0 pl-4">
                                                 {element.answer}
                                             </p>
                                         </details>

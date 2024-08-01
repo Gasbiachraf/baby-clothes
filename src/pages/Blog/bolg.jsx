@@ -69,11 +69,11 @@ export const BlogPage = () => {
     return (
         <>
             <section>
-                <div className='py-10'>
+                <div className='py-10 lg:px-0 px-4'>
                     <h1 className='text-2xl font-medium lg:pl-20'>Home /<span className='text-blue-600 pl-2 text-2xl'>News</span></h1>
                 </div>
-                <div className='flex justify-center'>
-                    <div className='lg:w-[88vw] flex gap-16 pb-16'>
+                <div className='flex  justify-center lg:px-0 px-4'>
+                    <div className='lg:w-[88vw]  flex lg:flex-row flex-col  lg:gap-16 gap-8 pb-16'>
                         <div className='lg:w-[25%] flex flex-col gap-4'>
                             <h1 className='text-3xl font-semibold pb-6'> Blog standard</h1>
                             <div className=" border-2 mb-4 border-full rounded-full flex ">
@@ -96,7 +96,7 @@ export const BlogPage = () => {
                                     </>)
                                 }
                             </div>
-                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl  '>
+                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl max-[430px]:hidden '>
                                 <h1 className='text-2xl pb-6 font-semibold '>Recent Posts</h1>
                                 {
                                     blogs.map((element) => <>
@@ -112,7 +112,7 @@ export const BlogPage = () => {
                                 }
 
                             </div>
-                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl '>
+                            <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl max-[430px]:hidden '>
                                 <h1 className='text-2xl '>Popular Tag</h1>
                                 <div className="flex flex-wrap gap-x-4 gap-y-5 text-lg  ">
                                     <p className='p-2 border rounded-xl'> Learn & Inspire</p>
@@ -123,7 +123,7 @@ export const BlogPage = () => {
                                     <p className='p-2 border rounded-xl'> Tips & Tricks</p>
                                 </div>
                             </div>
-                            <div className=' flex flex-col gap-4 border rounded-2xl   h-[90vh] ' style={{ backgroundImage: `url(${test})` }}>
+                            <div className=' flex flex-col gap-4 border rounded-2xl   h-[90vh] max-[430px]:hidden ' style={{ backgroundImage: `url(${test})` }}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deleniti, et placeat molestiae voluptas veritatis quibusdam.
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export const BlogPage = () => {
                                             <FaRegCalendar className='text-blue-600' />
                                             <p className='text-lg'>{element.date}</p>
                                         </div>
-                                        <p className='text-2xl font-semibold'>{element.title}</p>
+                                        <p className='lg:text-2xl text-xl font-semibold'>{element.title}</p>
                                         <p className='text-lg'>{element.description}</p>
                                     </div>
                                 </>)

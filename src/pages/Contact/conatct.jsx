@@ -5,12 +5,12 @@ import image3 from '../../assets/img/Address.png'
 export const ContactPage = () => {
     return (
         <section className='flex justify-center'>
-            <div className='lg:w-[88%]'>
+            <div className='lg:w-[88%] lg:px-0 px-4'>
                 <div className='text-2xl py-10 font-semibold'>
                     <p>Home / <span className='text-blue-600'>Contact</span></p>
                 </div>
                 <h1 className='text-4xl font-semibold pt-4 pb-10'>Contact</h1>
-                <div className='flex justify-between gap-4'>
+                <div className='flex lg:flex-row flex-col justify-between gap-4'>
                     <div className="py-4 w-[100%] border rounded-2xl flex flex-col items-center">
                         <img className='pb-4' src={image1} alt="" />
                         <p className='text-xl pb-2 font-semibold text-center'>Phone number</p>
@@ -28,7 +28,7 @@ export const ContactPage = () => {
                     </div>
 
                 </div>
-                <div className="flex gap-10 py-24">
+                <div className="flex lg:flex-row flex-col gap-10 py-24">
                     <div className='lg:w-[55%] sm:w-[100%]'>
                         <iframe className='w-[100%] lg:h-[100%]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229929.22597780332!2d-80.39426962891655!3d25.782314662068746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20Floride%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2sma!4v1722427050145!5m2!1sfr!2sma" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
