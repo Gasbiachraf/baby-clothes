@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <div className="">
-            <div className='bg-no-repeat bg-cover flex justify-between py-4 text-white' style={{ backgroundImage: `url(${image1})` }}>
+            <div className='bg-no-repeat bg-cover flex justify-between py-4 text-white max-[430px]:hidden' style={{ backgroundImage: `url(${image1})` }}>
                 <div className='gap-10 flex items-center lg:pl-20'>
                     <img src={image2} alt="" />
                     <p>Free  free shipping with over $150</p>
@@ -48,10 +48,10 @@ const Header = () => {
 
             {/* navbar  */}
 
-            <div className=" flex my-6 justify-around items-center max-[430px]:z-50  max-[430px]:top-0 max-[430px]:inset-x-0 bg-alpha py-5 relative">
+            <div className=" flex my-6 justify-around items-center max-[430px]:z-50  max-[430px]:top-0 max-[430px]:inset-x-0 bg-alpha lg:py-5 relative">
                 <img onClick={() => navigate('/')} src={image3} className="lg:w-32 w-24 cursor-pointer" alt="" />
                 <div
-                    className={`flex gap-16 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-5 ${isOpen ? "max-[430px]:top-20 shadow-lg p-2  bg-white" : "max-[430px]:-top-96"
+                    className={`flex lg:gap-16 lg:px-0 px-4 gap-4 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-2 ${isOpen ? " mt-72 duration-500  shadow-lg p-2  bg-white " : "max-[430px]:hidden  "
                         }`}
                 >
                     <Link to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
@@ -65,9 +65,9 @@ const Header = () => {
                         <p  className="absolute bg-yellow-500 rounded-full px-1 text-xs top-0 right-0  ">{panier.length}</p>
                         <SlBasket  className="text-3xl px-1" />
                     </div>
-                    <div className=" border-2  border-full rounded-full flex">
-                        <form action="" className="flex items-center gap-4">
-                            <input type="text" className="border-none m-1  outline-none pl-2" placeholder="Search" />
+                    <div className=" border-2 max-[430px]:w-[45vw]  border-full rounded-full flex">
+                        <form action="" className="flex items-center  lg:gap-4">
+                            <input type="text" className="border-none m-1 max-[430px]:w-[100%]  outline-none pl-2" placeholder="Search" />
                             <div className="bg-blue-600 rounded-full p-2">
                                 <IoSearchOutline className="text-xl text-white " />
                             </div>
@@ -92,15 +92,15 @@ const Header = () => {
                 )}
             </div>
 
-            <div>
-                <div className={droppanier ? "absolute duration-500 bg-blue-600 rounded-xl lg:w-[30vw] lg:h-[70vh] h-[80vh] right-2  lg:ml-0 ml-2  z-10 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[70vh] h-[80vh]  duration-300  rounded-xl right-2   z-10  "}>
-                    <div className={droppanier ? "flex flex-col gap-2  overflow-auto invisible-scrollbar  lg:h-[59vh] h-[65vh] pb-20 " : 'hidden'}>
+            <div className="">
+                <div className={droppanier ? "absolute duration-300 bg-blue-600 rounded-xl lg:w-[26vw] w-[96vw] lg:h-[74vh] h-[84vh] right-2 top-0 lg:mt-40 mt-20  lg:ml-0 ml-2  z-10 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[80vh] h-[84vh]  duration-300 top-0 lg:mt-40 mt-20 rounded-xl right-2   z-10  "}>
+                    <div className={droppanier ? "flex flex-col gap-2  overflow-auto invisible-scrollbar  lg:h-[63vh] h-[70vh] pb-20 " : 'hidden'}>
 
                         {
                             panier.map((element, id) => <>
                                 <div key={id} className="flex gap-4 p-2 border-2 rounded-xl font-bold">
                                     <img className="w-[25%]" src={element.image} alt="" />
-                                    <div className="text-xl text-white flex flex-col gap-2">
+                                    <div className="text-lg text-white flex flex-col gap-2">
                                         <p>{element.productName}</p>
                                         <p>$ {element.price}.00 </p>
                                         <p>X {element.quantitybuy}</p>
