@@ -24,7 +24,7 @@ export const ContactPage = () => {
                     <div className="py-4 w-[100%] border rounded-2xl flex flex-col items-center">
                         <img className='pb-4' src={image3} alt="" />
                         <p className='text-xl pb-2 font-semibold text-center'>Address place</p>
-                        <p className='text-center lg:px-20 text-lg'>1930 marigold lan, way Miami, florida USA</p>
+                        <p className='text-center lg:px-20 px-6 text-lg'>1930 marigold lan, way Miami, florida USA</p>
                     </div>
 
                 </div>

@@ -24,16 +24,12 @@ import { CiHeart } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Example from './modal';
 export const FirstSectionHome = () => {
-    const [product, setProduct, panier, setPanier , AddToCard] = useContext(MyContext)
+    const [product, setProduct, panier, setPanier , AddToCard ,open, setOpen] = useContext(MyContext)
 
     const navigate = useNavigate();
 
-   
-
-    console.log(panier);
-
-    console.log(panier);
 
     const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
     let pproduct = [...productrate5.slice(0, 4)]
@@ -93,7 +89,10 @@ export const FirstSectionHome = () => {
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2 z-10'>
                                                 <CiHeart className='text-3xl' />
-                                                <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl z-10 cursor-pointer' /></button>
+                                                <button onClick={() => AddToCard(element.id)}><SlBasket  className='text-2xl z-10 cursor-pointer' /><Example/></button>
+                                                
+
+                                                
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
@@ -138,7 +137,7 @@ export const FirstSectionHome = () => {
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2'>
                                                 <CiHeart className='text-3xl' />
-                                                <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl cursor-pointer' />
+                                                <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl cursor-pointer' /> <Example/>
                                                 </button>
                                             </div>
                                         </div>

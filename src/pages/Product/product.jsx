@@ -20,10 +20,11 @@ import image4 from "../../../src/assets/img/Discover Card.png"
 import image5 from "../../../src/assets/img/UnionPay.png"
 
 import { MyContext } from '../../utils/ContextProvider';
+import Example from '../Home/components/modal';
 
 export const ProductPage = () => {
 
-    const [product, setProduct, panier, setPanier] = useContext(MyContext)
+    const [product, setProduct, panier, setPanier , AddToCard ,open, setOpen , productmodal, setProductmodal ] = useContext(MyContext)
     const navigate = useNavigate()
     let [quantity, setQuantity] = useState(1)
     let achraf = quantity
@@ -35,21 +36,26 @@ export const ProductPage = () => {
 
 
 
-    const arrayPanier = [...panier]
-    const AddToCard = (parames) => {
-        let productAdd = product.filter(element => element.id == parames)
-        let questionPanier = panier.filter(element => element.id == parames)
-        if (questionPanier.length == 0) {
-            arrayPanier.push(productAdd[0])
-            setPanier(arrayPanier)
-        } else {
-            let productplus = panier.filter(element => element.id == parames)
-            for (let index = 0; index < quantity ; index++) {
-                productplus[0].quantitybuy++
-            }
-        }
+    // const arrayPanier = [...panier]
+    // const AddToCard = (parames) => {
+    //     let productAdd = product.filter(element => element.id == parames)
+    //     let questionPanier = panier.filter(element => element.id == parames)
+    //     if (questionPanier.length == 0) {
+    //         arrayPanier.push(productAdd[0])
+    //         setPanier(arrayPanier)
+    //     } else {
+    //         let productplus = panier.filter(element => element.id == parames)
+    //         for (let index = 0; index < quantity ; index++) {
+    //             productplus[0].quantitybuy++
+    //         }
+    //     }
+    //     let productClicked = [...productAdd]
 
-    }
+    //     setProductmodal(productClicked)
+    //     console.log(`${productmodal} here`);
+    //     setOpen(true)
+
+    // }
     
 
 
@@ -104,6 +110,7 @@ export const ProductPage = () => {
                                     <SlBasket className='lg:text-2xl ' />
                                     <p>Add to card</p>
                                 </div>
+                                   
                                 <div className='border rounded-xl px-4 py-2'>
                                     <CiHeart className='lg:text-3xl text-2xl' />
                                 </div>
@@ -155,20 +162,20 @@ export const ProductPage = () => {
                         {
                             pproduct.map((element, id) =>
                                 <>
-                                    <a href={`#${specificProduct[0].productName}`}>
-                                        <div onClick={() => { navigate(`/product/${element.id}`) }}>
+                                    <a>
+                                        <div >
                                             <div className=' rounded-lg  lg:w-[20vw] w-[80vw]   relative'  >
                                                 <div className='absolute right-3  top-3 text-gray-400 '>
                                                     <div className='flex flex-col gap-2'>
                                                         <CiHeart className='text-3xl' />
-                                                        <SlBasket className='text-2xl' />
+                                                        <button onClick={() => AddToCard(element.id)}><SlBasket  className='text-2xl  z-20' /> </button><Example />
                                                     </div>
                                                 </div>
                                                 <div className='absolute left-2 top-2'>
                                                     <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
                                                 </div>
-                                                <img className='lg:w-[20vw] w-[80vw]' src={element.image} alt="" />
-                                                <p className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
+                                                <img  className='lg:w-[20vw] w-[80vw]' src={element.image} alt="" />
+                                                <p  className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
                                                 <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                                 <div className="">
                                                     <div className='pt-4 flex gap-1'>

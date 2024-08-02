@@ -32,6 +32,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Educational Toys",
             image: product1,
             rate: 5,
             Stock: true,
@@ -44,6 +45,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Educational Toys",
             image: product2,
             rate: 5,
             Stock: true,
@@ -56,6 +58,7 @@ export const MyProvider = ({ children }) => {
             price: 39,
             oldprice: 0,
             category: "",
+            toytype: "Educational Toys",
             image: product3,
             rate: 0,
             Stock: true,
@@ -68,6 +71,7 @@ export const MyProvider = ({ children }) => {
             price: 39,
             oldprice: 0,
             category: "",
+            toytype: "Educational Toys",
             image: product4,
             rate: 5,
             Stock: true,
@@ -80,6 +84,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Educational Toys",
             image: product5,
             rate: 5,
             Stock: true,
@@ -92,6 +97,7 @@ export const MyProvider = ({ children }) => {
             price: 39.00,
             oldprice: 0,
             category: "",
+            toytype: "Educational Toys",
             image: product6,
             rate: 5,
             Stock: true,
@@ -104,6 +110,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Educational Toys",
             image: product7,
             rate: 0,
             Stock: true,
@@ -116,6 +123,7 @@ export const MyProvider = ({ children }) => {
             price: 39.00,
             oldprice: 0,
             category: "",
+            toytype: "Educational Toys",
             image: product8,
             rate: 0,
             Stock: true,
@@ -128,6 +136,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Educational Toys",
             image: product9,
             rate: 5,
             Stock: true,
@@ -140,6 +149,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Playsets",
             image: product10,
             rate: 5,
             Stock: true,
@@ -152,6 +162,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Playsets",
             image: product11,
             rate: 5,
             Stock: true,
@@ -164,6 +175,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Playsets",
             image: product12,
             rate: 0,
             Stock: true,
@@ -176,6 +188,7 @@ export const MyProvider = ({ children }) => {
             price: 39.00,
             oldprice: 0,
             category: "",
+            toytype: "Control Toys",
             image: product13,
             rate: 5,
             Stock: true,
@@ -188,6 +201,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Control Toys",
             image: product14,
             rate: 5,
             Stock: true,
@@ -200,6 +214,7 @@ export const MyProvider = ({ children }) => {
             price: 29.00,
             oldprice: 39.00,
             category: "sale",
+            toytype: "Control Toys",
             image: product15,
             rate: 0,
             Stock: true,
@@ -212,15 +227,44 @@ export const MyProvider = ({ children }) => {
             price: 39.00,
             oldprice: 0,
             category: "",
+            toytype: "Eco-Friendly Toys",
             image: product16,
             rate: 5,
             Stock: true,
             quantitybuy: 1
-        }
+        },
+        {
+            id: 17,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            toytype: "Eco-Friendly Toys",
+            image: product6,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
+        },
+        {
+            id: 18,
+            productName: "Magna etiam tempor orci",
+            description: "Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus",
+            price: 39.00,
+            oldprice: 0,
+            category: "",
+            toytype: "Stuffed Toys",
+            image: product10,
+            rate: 5,
+            Stock: true,
+            quantitybuy: 1
+        },
     ])
 
     const [panier, setPanier] = useState([])
+    const [productmodal, setProductmodal] = useState([])
 
+    const [open, setOpen] = useState(false)
     const arrayPanier = [...panier]
     const AddToCard = (parames) => {
         let productAdd = product.filter(element => element.id == parames)
@@ -232,14 +276,21 @@ export const MyProvider = ({ children }) => {
             let productplus = panier.filter(element => element.id == parames)
             productplus[0].quantitybuy++
         }
+        // let productClicked = [...productAdd]
+
+        setProductmodal(productAdd)
+        console.log(`${productmodal} here`);
+        setOpen(true)
+
 
     }
+
 
 
     return (
         <>
 
-            <MyContext.Provider value={[product, setProduct, panier, setPanier , AddToCard]} >
+            <MyContext.Provider value={[product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal]} >
                 {children}
             </MyContext.Provider>
 

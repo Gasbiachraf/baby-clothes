@@ -79,7 +79,7 @@ export const BlogPage = () => {
                             <div className=" border-2 mb-4 border-full rounded-full flex ">
                                 <form action="" className="w-[100%] flex  justify-between">
 
-                                    <input type="text" className=" m-1  outline-none pl-2 w-[100%]  " placeholder="Search" />
+                                    <input type="text" className=" m-1  ml-2 outline-none pl-1 w-[100%]  " placeholder="Search" />
                                     <div className="bg-blue-600 rounded-full p-2  ">
                                         <IoSearchOutline className="text-xl text-white  " />
                                     </div>
