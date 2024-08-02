@@ -25,6 +25,7 @@ import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import Example from './modal';
+import { Carousel } from './carousel';
 export const FirstSectionHome = () => {
     const [product, setProduct, panier, setPanier , AddToCard ,open, setOpen] = useContext(MyContext)
 
@@ -90,9 +91,6 @@ export const FirstSectionHome = () => {
                                             <div className='flex flex-col gap-2 z-10'>
                                                 <CiHeart className='text-3xl' />
                                                 <button onClick={() => AddToCard(element.id)}><SlBasket  className='text-2xl z-10 cursor-pointer' /><Example/></button>
-                                                
-
-                                                
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
@@ -163,6 +161,8 @@ export const FirstSectionHome = () => {
                     }
                 </div>
             </section>
+
+            <Carousel/>
 
 
             <section>
