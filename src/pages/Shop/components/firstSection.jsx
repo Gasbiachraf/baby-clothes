@@ -205,13 +205,13 @@ export const FirstSectionShop = () => {
                                     )
                                 }
                             </div>
-                            <div className='flex justify-center gap-4 pb-16'>
+                            {/* <div className='flex justify-center gap-4 pb-16'>
                                 <div className='border rounded-full text-2xl p-2 flex justify-center items-center'><IoIosArrowBack /></div>
                                 <div className='border rounded-full text-2xl px-4 py-1 bg-blue-700 text-white'>1</div>
                                 <div className='border rounded-full text-2xl px-4 py-1'>2</div>
                                 <div className='border rounded-full text-2xl px-4 py-1'>3</div>
                                 <div className='border rounded-full text-2xl p-2 flex justify-center items-center'><IoIosArrowForward /></div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

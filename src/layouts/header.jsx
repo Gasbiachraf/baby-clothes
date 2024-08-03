@@ -101,7 +101,7 @@ const Header = () => {
             </div>
 
             <div className="">
-                <div className={droppanier ? "absolute duration-300 bg-blue-600 rounded-xl lg:w-[26vw] w-[96vw] lg:h-[74vh] h-[84vh] right-2 top-0 lg:mt-40 mt-20  lg:ml-0 ml-2  z-10 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[80vh] h-[84vh]  duration-300 top-0 lg:mt-40 mt-20 rounded-xl right-2   z-10  "}>
+                <div className={droppanier ? "absolute duration-300 bg-blue-600 rounded-xl lg:w-[26vw] w-[96vw] lg:h-[74vh] h-[84vh] right-2 top-0 lg:mt-40 mt-20  lg:ml-0 ml-2  z-30 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[80vh] h-[84vh]  duration-300 top-0 lg:mt-40 mt-20 rounded-xl right-2   z-30  "}>
                     <div className={droppanier ? "flex flex-col gap-2  overflow-auto invisible-scrollbar  lg:h-[63vh] h-[70vh] pb-20 " : 'hidden'}>
 
                         {
@@ -151,7 +151,7 @@ const Header = () => {
 
             {/* navbar  */}
 
-            <div onClick={()=>window.scrollTo(0,0)} className="fixed cursor-pointer rounded-full p-4 bg-[#0F83B2] text-white right-4 bottom-4 z-20"> 
+            <div onClick={()=>window.scrollTo({top:0 , behavior :"smooth"})} className="fixed cursor-pointer rounded-full p-4 bg-[#0F83B2] text-white right-4 bottom-4 z-20"> 
             <FaArrowUp />
 
             </div>

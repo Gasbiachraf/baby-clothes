@@ -101,7 +101,7 @@ export const ProductPage = () => {
                             </div>
                             <div className=' flex lg:pt-4 gap-4 pb-10'>
                                 <div className='border-2 border-blue-600 flex  text-xl rounded-xl '>
-                                    <button onClick={() => quantity > 0 ? setQuantity(quantity - 1) : 1} className='lg:px-4 px-2 lg:py-2 py-1 lg:text-2xl'><AiOutlineMinus /></button>
+                                    <button onClick={() => quantity > 1 ? setQuantity(quantity - 1) : 1} className='lg:px-4 px-2 lg:py-2 py-1 lg:text-2xl'><AiOutlineMinus /></button>
                                     <p className='border-x-2 border-blue-600 lg:w-[5vw] w-[6vw]  flex justify-center items-center '>
                                         {quantity}
                                     </p>
