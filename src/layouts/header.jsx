@@ -21,7 +21,7 @@ import { MyContext } from "../utils/ContextProvider";
 
 const Header = () => {
 
-    const [product, setProduct, panier, setPanier] = useContext(MyContext)
+    const {product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal , Heart} = useContext(MyContext)
     const [isOpen, setIsOpen] = useState(false);
     const [droppanier, setDroppanier] = useState(false);
 

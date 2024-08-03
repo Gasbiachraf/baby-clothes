@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { SlBasket } from "react-icons/sl";
-import { CiHeart } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { TbExchange } from "react-icons/tb";
@@ -24,7 +25,7 @@ import Example from '../Home/components/modal';
 
 export const ProductPage = () => {
 
-    const [product, setProduct, panier, setPanier , AddToCard ,open, setOpen , productmodal, setProductmodal ] = useContext(MyContext)
+    const { product, AddToCard, Heart } = useContext(MyContext)
     const navigate = useNavigate()
     let [quantity, setQuantity] = useState(1)
     let achraf = quantity
@@ -56,7 +57,7 @@ export const ProductPage = () => {
     //     setOpen(true)
 
     // }
-    
+
 
 
 
@@ -110,9 +111,9 @@ export const ProductPage = () => {
                                     <SlBasket className='lg:text-2xl ' />
                                     <p>Add to card</p>
                                 </div>
-                                   
-                                <div className='border rounded-xl px-4 py-2'>
-                                    <CiHeart className='lg:text-3xl text-2xl' />
+
+                                <div className='border rounded-xl px-4 flex items-center'>
+                                    <button onClick={() => Heart(specificProduct[0])}>{!specificProduct[0].heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
                                 </div>
                                 <div className='border rounded-xl px-4 py-2'>
                                     <TbExchange className='lg:text-3xl text-2xl rotate-90' />
@@ -167,15 +168,15 @@ export const ProductPage = () => {
                                             <div className=' rounded-lg  lg:w-[20vw] w-[80vw]   relative'  >
                                                 <div className='absolute right-3  top-3 text-gray-400 '>
                                                     <div className='flex flex-col gap-2'>
-                                                        <CiHeart className='text-3xl' />
-                                                        <button onClick={() => AddToCard(element.id)}><SlBasket  className='text-2xl  z-20' /> </button><Example />
+                                                    <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
+                                                    <button onClick={() => AddToCard(element.id)}><SlBasket className='text-2xl  z-20' /> </button><Example />
                                                     </div>
                                                 </div>
                                                 <div className='absolute left-2 top-2'>
                                                     <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
                                                 </div>
-                                                <img  className='lg:w-[20vw] w-[80vw]' src={element.image} alt="" />
-                                                <p  className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
+                                                <img className='lg:w-[20vw] w-[80vw]' src={element.image} alt="" />
+                                                <p className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
                                                 <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                                 <div className="">
                                                     <div className='pt-4 flex gap-1'>

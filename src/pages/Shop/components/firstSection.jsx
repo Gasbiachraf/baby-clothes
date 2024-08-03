@@ -3,7 +3,8 @@ import { useContext, useState } from 'react';
 import './firstSection.sass'
 
 import { SlBasket } from "react-icons/sl";
-import { CiHeart } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
@@ -26,7 +27,7 @@ import Example from '../../Home/components/modal';
 
 
 export const FirstSectionShop = () => {
-    const [product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal] = useContext(MyContext)
+    const { product, AddToCard, Heart } = useContext(MyContext)
     // const [product, setProduct, panier, setPanier, AddToCard] = useContext(MyContext)
     const [shopbydefault, setShopbydefault] = useState(true)
     const navigate = useNavigate()
@@ -58,7 +59,7 @@ export const FirstSectionShop = () => {
         },
     ])
 
-    let [toysfilter , setToysfilter] = useState("Educational Toys")
+    let [toysfilter, setToysfilter] = useState("Educational Toys")
     return (
         <>
             <section>
@@ -72,7 +73,7 @@ export const FirstSectionShop = () => {
                                 <h1 className='text-2xl pt-6 pb-4'>Product categories</h1>
                                 {
                                     toysCategory.map((element) => <>
-                                        <div onClick={()=>setToysfilter(element.toysname)} className='flex gap-2 items-center text-xl pb-2 cursor-pointer'>
+                                        <div onClick={() => setToysfilter(element.toysname)} className='flex gap-2 items-center text-xl pb-2 cursor-pointer'>
                                             <FaPlus />
                                             <p className=''>{element.toysname} </p>
                                         </div>
@@ -142,7 +143,7 @@ export const FirstSectionShop = () => {
                                                 <div className=' rounded-lg  lg:w-[20vw] w-[80vw]  relative'  >
                                                     <div className='absolute right-3  top-3 text-gray-400 '>
                                                         <div className='flex flex-col gap-2'>
-                                                            <CiHeart className='text-3xl' />
+                                                            <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
                                                             <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl' /> <Example /></button>
                                                         </div>
                                                     </div>
@@ -181,15 +182,16 @@ export const FirstSectionShop = () => {
                                                             {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
                                                         </div>
                                                         <div className=' flex pt-4 gap-4'>
-                                                            <button onClick={()=> AddToCard(element.id)
-                                                            }   className='flex items-center gap-4 cursor-pointer bg-blue-500 rounded-xl text-white px-4 py-2'>
-                                                                <SlBasket  className='text-2xl' />
+                                                            <button onClick={() => AddToCard(element.id)
+                                                            } className='flex items-center gap-4 cursor-pointer bg-blue-500 rounded-xl text-white px-4 py-2'>
+                                                                <SlBasket className='text-2xl' />
                                                                 <p>Add to card </p>
-                                                                
+
                                                             </button>
-                                                                <Example/>
+                                                            <Example />
                                                             <div className='border rounded-xl px-4 py-2'>
-                                                                <CiHeart className='text-3xl' />
+                                                                <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
+
                                                             </div>
                                                             <div className='border rounded-xl px-4 py-2'>
                                                                 <TbExchange className='text-3xl rotate-90' />

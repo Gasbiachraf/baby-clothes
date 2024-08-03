@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const CartPage = () => {
 
-    const [product, setProduct, panier, setPanier] = useContext(MyContext)
+    const {panier} = useContext(MyContext)
     const navigate = useNavigate()
 
     let subtotal = 0

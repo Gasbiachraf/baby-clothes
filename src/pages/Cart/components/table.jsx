@@ -6,7 +6,7 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 export const TableCart = () => {
-    const [product, setProduct, panier, setPanier] = useContext(MyContext)
+    const {panier, setPanier} = useContext(MyContext)
     let [quantity, setQuantity] = useState(1)
 
     const CartAdd = (parames) => {
@@ -95,7 +95,7 @@ export const TableCart = () => {
                                                 $ {element.price * element.quantitybuy}
                                             </td>
                                             <td  class="text-lg w-[14%]   m-auto  text-gray-900 font-medium  py-4 whitespace-nowrap">
-                                                <button className='w-[100%] py-6 text-3xl flex justify-center' onClick={()=>DeleteProduct(element.id)}><RiDeleteBinLine /></button>
+                                                <button className='w-[100%] py-6 text-3xl flex justify-center' onClick={()=>DeleteProduct(element.id)}><RiDeleteBinLine className='hover:text-slate-400' /></button>
                                             </td>
                                         </tr>
                                     </>)

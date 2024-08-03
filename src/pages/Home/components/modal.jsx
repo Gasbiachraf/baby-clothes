@@ -6,7 +6,7 @@ import { useContext, useState } from 'react'
 import { MyContext } from '../../../utils/ContextProvider'
 
 export default function Example() {
-    const [product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal] = useContext(MyContext)
+    const { open, setOpen, productmodal} = useContext(MyContext)
     
     
 

@@ -36,7 +36,8 @@ export const MyProvider = ({ children }) => {
             image: product1,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 2,
@@ -49,7 +50,8 @@ export const MyProvider = ({ children }) => {
             image: product2,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 3,
@@ -62,7 +64,8 @@ export const MyProvider = ({ children }) => {
             image: product3,
             rate: 0,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 4,
@@ -75,7 +78,8 @@ export const MyProvider = ({ children }) => {
             image: product4,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 5,
@@ -88,7 +92,8 @@ export const MyProvider = ({ children }) => {
             image: product5,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 6,
@@ -101,7 +106,8 @@ export const MyProvider = ({ children }) => {
             image: product6,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 7,
@@ -114,7 +120,8 @@ export const MyProvider = ({ children }) => {
             image: product7,
             rate: 0,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 8,
@@ -127,7 +134,8 @@ export const MyProvider = ({ children }) => {
             image: product8,
             rate: 0,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 9,
@@ -140,7 +148,8 @@ export const MyProvider = ({ children }) => {
             image: product9,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 10,
@@ -153,7 +162,8 @@ export const MyProvider = ({ children }) => {
             image: product10,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 11,
@@ -166,7 +176,8 @@ export const MyProvider = ({ children }) => {
             image: product11,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 12,
@@ -179,7 +190,8 @@ export const MyProvider = ({ children }) => {
             image: product12,
             rate: 0,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 13,
@@ -192,7 +204,8 @@ export const MyProvider = ({ children }) => {
             image: product13,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 14,
@@ -205,7 +218,8 @@ export const MyProvider = ({ children }) => {
             image: product14,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 15,
@@ -218,7 +232,8 @@ export const MyProvider = ({ children }) => {
             image: product15,
             rate: 0,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 16,
@@ -231,7 +246,8 @@ export const MyProvider = ({ children }) => {
             image: product16,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 17,
@@ -244,7 +260,8 @@ export const MyProvider = ({ children }) => {
             image: product6,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
         {
             id: 18,
@@ -257,7 +274,8 @@ export const MyProvider = ({ children }) => {
             image: product10,
             rate: 5,
             Stock: true,
-            quantitybuy: 1
+            quantitybuy: 1,
+            heart: false,
         },
     ])
 
@@ -281,7 +299,14 @@ export const MyProvider = ({ children }) => {
         setProductmodal(productAdd)
         console.log(`${productmodal} here`);
         setOpen(true)
+    }
+    const Heart = (parames) => {
 
+        let productId = parames.id
+        let productheart = product.filter(element => element.id == productId)
+        productheart[0].heart = !parames.heart
+        let data = [...product]
+        setProduct(data)
 
     }
 
@@ -290,7 +315,7 @@ export const MyProvider = ({ children }) => {
     return (
         <>
 
-            <MyContext.Provider value={[product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal]} >
+            <MyContext.Provider value={ {product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal , Heart} } >
                 {children}
             </MyContext.Provider>
 
