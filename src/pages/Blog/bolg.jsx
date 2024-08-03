@@ -128,7 +128,7 @@ export const BlogPage = () => {
                                     <p className='p-2 border rounded-xl'> Tips & Tricks</p>
                                 </div>
                             </div>
-                            <div className=' flex flex-col gap-4 border rounded-2xl  px-6 items-center  h-[90vh] max-[430px]:hidden achraf'  >
+                            <div className=' flex flex-col gap-4 border rounded-2xl  px-6 items-center w-[100%]  h-[90vh] max-[430px]:hidden achraf'  >
                                 <p className='text-2xl pt-24 text-center text-[#0B8498] font-bold '>Dream Toys at Delightful Prices!</p>
                                 <p className='text-lg pt-3 pb-6 text-center text-[#0B8498] '>15% Off on kids'Toys and Gifts!</p>
                                 <button onClick={()=>navigate('/shop')} className='bg-yellow-300 px-8 py-3 text-xl font-semibold rounded-full cursor-pointer'>Shop now</button>
