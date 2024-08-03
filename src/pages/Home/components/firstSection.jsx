@@ -122,7 +122,7 @@ export const FirstSectionHome = () => {
 
             <section >
                 <div className='flex flex-col items-center lg:p-0 p-4'>
-                    <div className='lg:w-[90vw] flex lg:flex-row flex-col lg:gap-8 gap-4 py-16'>
+                    <div className='lg:w-[90vw] flex justify-center lg:flex-row flex-col lg:gap-8 gap-4 py-16'>
                         <img className='lg:w-100 ' src={image7} alt="" />
                         <img onClick={() => navigate('/shop')} className='lg:w-100 ' src={image8} alt="" />
                     </div>

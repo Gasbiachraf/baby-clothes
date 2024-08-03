@@ -66,7 +66,7 @@ export const FirstSectionShop = () => {
                 <div className='py-10'>
                     <h1 className='text-2xl font-medium lg:pl-20 pl-2'>Home /<span className='text-blue-600 pl-2 text-2xl'>Products</span></h1>
                 </div>
-                <div className='flex justify-center'>
+                <div className='flex justify-center pb-10'>
                     <div className='w-[90vw]  flex lg:gap-16 lg:flex-row flex-col'>
                         <div className='lg:w-[25%] w-[100%] flex flex-col gap-4 lg:p-0 px-4'>
                             <div className='px-3 pb-6 flex flex-col gap-4 border rounded-2xl'>
@@ -123,8 +123,8 @@ export const FirstSectionShop = () => {
                             <h1 className='text-3xl font-bold'>{toysfilter}</h1>
                             <div className='flex justify-between pt-6'>
                                 <div className='flex gap-4 items-center max-[430px]:hidden '>
-                                    <CgMenuGridR onClick={() => setShopbydefault(true)} className={shopbydefault ? "text-3xl text-blue-600" : "text-3xl"} />
-                                    <TfiMenuAlt onClick={() => setShopbydefault(false)} className={!shopbydefault ? "text-3xl text-blue-600 " : "text-3xl"} />
+                                    <CgMenuGridR onClick={() => setShopbydefault(true)} className={`${shopbydefault ? "text-3xl text-blue-600 " : "text-3xl"} cursor-pointer`} />
+                                    <TfiMenuAlt onClick={() => setShopbydefault(false)} className={`${!shopbydefault ? "text-3xl text-blue-600 " : "text-3xl"} cursor-pointer`} />
 
                                 </div>
                                 <div>

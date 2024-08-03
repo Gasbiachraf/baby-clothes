@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import { FaRegCalendar } from "react-icons/fa6";
 
+import './blog.sass'
+
 import test from '../../assets/img/Rectangle 61.png'
 import image2 from '../../assets/img/Rectangle 59.png'
 import image3 from '../../assets/img/Rectangle 59 (1).png'
@@ -13,8 +15,11 @@ import image5 from '../../assets/img/Rectangle 59 (3).png'
 import { IoSearchOutline } from "react-icons/io5";
 
 import { FaPlus } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 export const BlogPage = () => {
+
+    const navigate = useNavigate()
 
     const [blogstype, setBlogstype] = useState([
         {
@@ -123,8 +128,10 @@ export const BlogPage = () => {
                                     <p className='p-2 border rounded-xl'> Tips & Tricks</p>
                                 </div>
                             </div>
-                            <div className=' flex flex-col gap-4 border rounded-2xl   h-[90vh] max-[430px]:hidden ' style={{ backgroundImage: `url(${test})` }}>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deleniti, et placeat molestiae voluptas veritatis quibusdam.
+                            <div className=' flex flex-col gap-4 border rounded-2xl  px-6 items-center  h-[90vh] max-[430px]:hidden achraf'  >
+                                <p className='text-2xl pt-24 text-center text-[#0B8498] font-bold '>Dream Toys at Delightful Prices!</p>
+                                <p className='text-lg pt-3 pb-6 text-center text-[#0B8498] '>15% Off on kids'Toys and Gifts!</p>
+                                <button onClick={()=>navigate('/shop')} className='bg-yellow-300 px-8 py-3 text-xl font-semibold rounded-full cursor-pointer'>Shop now</button>
                             </div>
                         </div>
                         <div className='lg:w-[75%]  rounded-2xl flex flex-col gap-6 '>
