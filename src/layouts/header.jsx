@@ -5,13 +5,14 @@ import image3 from "../assets/img/image 2.png"
 import image from "../assets/img/image 11 (10).png"
 import './header.sass'
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { TbMenu2 } from "react-icons/tb";
+import { FaArrowUp } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { SlBasket } from "react-icons/sl";
 import { IoSearchOutline } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MyContext } from "../utils/ContextProvider";
 
 
@@ -21,7 +22,7 @@ import { MyContext } from "../utils/ContextProvider";
 
 const Header = () => {
 
-    const {product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal , Heart} = useContext(MyContext)
+    const { product, setProduct, panier, setPanier, AddToCard, open, setOpen, productmodal, setProductmodal, Heart } = useContext(MyContext)
     const [isOpen, setIsOpen] = useState(false);
     const [droppanier, setDroppanier] = useState(false);
 
@@ -31,6 +32,13 @@ const Header = () => {
         setDroppanier(!droppanier)
         navigate('/cart')
     }
+
+
+    let location = useLocation()
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [location])
 
     return (
         <div className="">
@@ -61,9 +69,9 @@ const Header = () => {
                     <Link to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
                 </div>
                 <div className="flex gap-4 items-center">
-                    <div  onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">
-                        <p  className="absolute bg-yellow-500 rounded-full px-1 text-xs top-0 right-0  ">{panier.length}</p>
-                        <SlBasket  className="text-3xl px-1" />
+                    <div onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">
+                        <p className="absolute bg-yellow-500 rounded-full px-1 text-xs top-0 right-0  ">{panier.length}</p>
+                        <SlBasket className="text-3xl px-1" />
                     </div>
                     <div className=" border-2 max-[430px]:w-[45vw]  border-full rounded-full flex">
                         <form action="" className="flex items-center  lg:gap-4">
@@ -142,6 +150,11 @@ const Header = () => {
 
 
             {/* navbar  */}
+
+            <div onClick={()=>window.scrollTo(0,0)} className="fixed cursor-pointer rounded-full p-4 bg-[#0F83B2] text-white right-4 bottom-4 z-20"> 
+            <FaArrowUp />
+
+            </div>
 
         </div>
     );
