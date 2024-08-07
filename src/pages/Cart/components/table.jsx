@@ -92,7 +92,7 @@ export const TableCart = () => {
                                                 </div>
                                             </td>
                                             <td class="text-lg w-[14%]  text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-                                                $ {element.price * element.quantitybuy}
+                                                $ {element.price * element.quantitybuy}.00
                                             </td>
                                             <td  class="text-lg w-[14%]   m-auto  text-gray-900 font-medium  py-4 whitespace-nowrap">
                                                 <button className='w-[100%] py-6 text-3xl flex justify-center' onClick={()=>DeleteProduct(element.id)}><RiDeleteBinLine className='hover:text-slate-400' /></button>

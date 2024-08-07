@@ -57,11 +57,6 @@ export const ProductPage = () => {
             setPanier(data)
 
         }
-        //  else {
-        //     let productplus = panier.filter(element => element.id == parames)
-        //     productplus[0].quantitybuy++
-        // }
-        // let productClicked = [...productAdd]
 
 
 

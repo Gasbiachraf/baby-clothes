@@ -68,17 +68,19 @@ export const FirstSectionShop = () => {
                 </div>
                 <div className='flex justify-center pb-10'>
                     <div className='w-[90vw]  flex lg:gap-16 lg:flex-row flex-col'>
-                        <div className='lg:w-[25%] w-[100%] flex flex-col gap-4 lg:p-0 px-4'>
-                            <div className='px-3 pb-6 flex flex-col gap-4 border rounded-2xl'>
+                        <div className='lg:w-[25%] w-[100%]  flex flex-col gap-4 lg:p-0 px-4'>
+                            <div className='px-3 pb-6 flex flex-col  gap-4 border rounded-2xl'>
                                 <h1 className='text-2xl pt-6 pb-4'>Product categories</h1>
-                                {
-                                    toysCategory.map((element) => <>
-                                        <div onClick={() => setToysfilter(element.toysname)} className='flex gap-2 items-center text-xl pb-2 cursor-pointer'>
-                                            <FaPlus />
-                                            <p className=''>{element.toysname} </p>
-                                        </div>
-                                    </>)
-                                }
+                                <div className='flex lg:flex-col gap-4 max-[430px]:overflow-x-scroll w-[100%] '>
+                                    {
+                                        toysCategory.map((element) => <>
+                                            <div onClick={() => setToysfilter(element.toysname)} className='flex  gap-2 items-center  text-xl  pb-2 cursor-pointer'>
+                                                <FaPlus />
+                                                <p className='flex text-nowrap' content="width=device-width, initial-scale=1.0">{element.toysname} </p>
+                                            </div>
+                                        </>)
+                                    }
+                                </div>
                             </div>
                             <div className='px-3 py-6 flex flex-col gap-4 border rounded-2xl max-[430px]:hidden '>
                                 <h1 className='text-2xl '>Filter by price</h1>

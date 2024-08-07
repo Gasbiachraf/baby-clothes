@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const Footer = () => {
     const navigate = useNavigate()
     return (
-        <footer className='bg-cover bg-no-repeat  lg:h-[80vh] flex lg:flex-row flex-col items-center lg:gap-4 gap-8 lg:py-0 py-12 lg:pl-16 lg:pb-16' style={{ backgroundImage : `url(${image1})` }}>
+        <footer className='bg-cover bg-no-repeat  lg:h-[80vh] flex lg:flex-row flex-col items-center lg:gap-4 gap-8 lg:py-0 py-12 lg:pl-16 lg:pb-16 ' style={{ backgroundImage : `url(${image1})` }}>
             <div className='flex flex-col  gap-4 lg:w-[20vw] w-[90%]'>
                 <img className='lg:w-[15vw] w-[40vw] cursor-pointer' onClick={()=>navigate('/')} src={image2} alt="" />
                 <p>Lorem ipsum dolor sit amet consectetur. lorem</p>
@@ -28,7 +28,6 @@ const Footer = () => {
                 <p>Terms of use </p>
                 <p>Wishlist </p>
                 <p>Submit your feedback </p>
-
             </div>
             <div className='flex flex-col gap-4 lg:w-[20vw] w-[90%]'>
                 <h1 className='text-2xl'>Customer service</h1>
@@ -36,7 +35,6 @@ const Footer = () => {
                 <p>10am-6pm(NewYork time) </p>
                 <p>Call us : <span className='text-blue-500'>123-456-7868</span> </p>
                 <p>Email us : <span className='text-blue-500'>info@example.com</span> </p>
-
             </div>
 
             
