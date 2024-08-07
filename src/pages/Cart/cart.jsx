@@ -41,11 +41,11 @@ export const CartPage = () => {
                     <div className="flex lg:justify-end lg:w-[100%] w-[90vw]  py-10 lg:pl-0 pl-1">
                         <div className='border-2 flex flex-col gap-2 rounded-xl lg:w-[48%] p-4'>
                             <p className='text-2xl'>Cart Total</p>
-                            <div className='flex lg:gap-72 gap-56 pt-4 text-xl'>
+                            <div className='flex lg:gap-72 gap-56 max-[375px]:gap-44 pt-4 text-xl'>
                                 <p>Subtotal</p>
                                 <p className='font-semibold'>${subtotal}.00</p>
                             </div>
-                            <div className='flex lg:gap-80 gap-64 pt-2 text-xl pb-6'>
+                            <div className='flex lg:gap-80 gap-64 max-[375px]:gap-52 pt-2 text-xl pb-6'>
                                 <p>Total</p>
                                 <p className='font-semibold'>${subtotal + 20}.00</p>
                             </div>

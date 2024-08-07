@@ -298,7 +298,6 @@ export const MyProvider = ({ children }) => {
         // let productClicked = [...productAdd]
 
         setProductmodal(productAdd)
-        console.log(`${productmodal} here`);
         setOpen(true)
     }
     const Heart = (parames) => {

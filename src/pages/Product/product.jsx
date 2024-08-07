@@ -25,7 +25,7 @@ import Example from '../Home/components/modal';
 
 export const ProductPage = () => {
 
-    const { product, AddToCard, Heart } = useContext(MyContext)
+    const { product, panier, setPanier, Heart, open, setOpen, productmodal, setProductmodal } = useContext(MyContext)
     const navigate = useNavigate()
     let [quantity, setQuantity] = useState(1)
     let achraf = quantity
@@ -33,6 +33,45 @@ export const ProductPage = () => {
     const { idProduct } = useParams();
     const specificProduct = product.filter(element => element.id == idProduct)
     let pproduct = [...product.slice(0, 4)]
+
+
+
+
+
+    const arrayPanier = [...panier]
+    const AddToCard = (parames) => {
+        let productAdd = product.filter(element => element.id == parames)
+        let questionPanier = panier.filter(element => element.id == parames)
+        if (questionPanier.length == 0) {
+            arrayPanier.push(productAdd[0])
+            setPanier(arrayPanier)
+            let productQuantityAdd = arrayPanier.filter(element => element.id == idProduct)
+            productQuantityAdd[0].quantitybuy = quantity
+            let data = [...arrayPanier]
+            setPanier(data)
+        } else {
+
+            let productQuantityAdd = arrayPanier.filter(element => element.id == idProduct)
+            productQuantityAdd[0].quantitybuy = productQuantityAdd[0].quantitybuy + quantity
+            let data = [...arrayPanier]
+            setPanier(data)
+
+        }
+        //  else {
+        //     let productplus = panier.filter(element => element.id == parames)
+        //     productplus[0].quantitybuy++
+        // }
+        // let productClicked = [...productAdd]
+
+
+
+
+
+
+
+        setProductmodal(productAdd)
+        setOpen(true)
+    }
 
 
 
@@ -108,8 +147,8 @@ export const ProductPage = () => {
                                     <button onClick={() => setQuantity(quantity + 1)} className='lg:px-4 px-2 lg:py-2 py-1 lg:text-2xl'><GoPlus /></button>
                                 </div>
                                 <div onClick={() => AddToCard(specificProduct[0].id)} className='flex items-center lg:gap-4 gap-2  cursor-pointer bg-blue-500 rounded-xl text-white lg:px-4 px-2 lg:py-2 py-1'>
-                                    <SlBasket className='lg:text-2xl ' />
-                                    <p>Add to card</p>
+                                    <SlBasket className='lg:text-2xl max-[375px]:text-4xl max-[375px]:px-1 ' />
+                                    <p className='max-[375px]:hidden '>Add to card</p>
                                 </div>
 
                                 <div className='border rounded-xl px-4 flex items-center'>
@@ -121,8 +160,8 @@ export const ProductPage = () => {
                                 </div>
                             </div>
                             <div className='border flex flex-col gap-4 py-2 px-4 rounded-2xl'>
-                                <h1 className='text-xl font-semibold'>Short description</h1>
-                                <div className='flex   justify-between  text-xl'>
+                                <h1 className='text-xl max-[375px]:text-lg font-semibold'>Short description</h1>
+                                <div className='flex   justify-between  text-xl max-[375px]:text-lg'>
                                     <div className='flex flex-col gap-4'>
                                         <p>SKU : BG-106{specificProduct[0].id}</p>
                                         <p>Tags : 2 -5 years </p>
@@ -148,11 +187,11 @@ export const ProductPage = () => {
                     </div>
                 </div>
                 <div className='border rounded-2xl lg:py-6 py-4 lg:px-20  px-2 ml-1'>
-                    <div className='flex justify-center gap-10 text-2xl'>
+                    <div className='flex justify-center gap-10 text-2xl max-[375px]:text-xl'>
                         <p className='border-b-2 border-blue-600 pb-2'>Description </p>
                         <p>Reviews(Nbr)</p>
                     </div>
-                    <div className='pt-12 text-xl'>
+                    <div className='pt-12 text-xl max-[375px]:text-lg max-[375px]:pt-4'>
                         <p className='pb-4'>{specificProduct[0].description}</p>
                         <p className='max-[430px]:hidden'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio voluptas id esse nostrum enim itaque atque molestias reprehenderit quis a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, ipsum. </p>
                     </div>
@@ -168,8 +207,8 @@ export const ProductPage = () => {
                                             <div className=' rounded-lg  lg:w-[20vw] w-[80vw]   relative'  >
                                                 <div className='absolute right-3  top-3 text-gray-400 '>
                                                     <div className='flex flex-col gap-2'>
-                                                    <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
-                                                    <button onClick={() => AddToCard(element.id)}><SlBasket className='text-2xl  z-20' /> </button><Example />
+                                                        <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}</button>
+                                                        <button onClick={() => AddToCard(element.id)}><SlBasket className='text-2xl  z-20' /> </button><Example />
                                                     </div>
                                                 </div>
                                                 <div className='absolute left-2 top-2'>
