@@ -9,7 +9,7 @@ import { FaStar } from "react-icons/fa";
 import image1 from '../../../assets/img/profilachraf.jpeg'
 import image2 from '../../../assets/img/profilhamza.jpeg'
 import image3 from '../../../assets/img/profilzakaria.jpeg'
-import image4 from '../../../assets/img/profilkawtar.jpeg'
+import image4 from '../../../assets/img/profilghizlan.jpeg'
 import image5 from '../../../assets/img/profillarbi.jpeg'
 import carouseltop from '../../../assets/img/carouseltop.svg'
 import carouselright from '../../../assets/img/carouselright.svg'
@@ -77,7 +77,7 @@ export const Carousel = () => {
         },
         {
             id: 4,
-            parentName: "Lmerhouma",
+            parentName: "Ghizlane",
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, iusto Lorem ipsum dolor sit amet",
             image: image4
         },
