@@ -28,13 +28,41 @@ import { useNavigate } from 'react-router-dom';
 import Example from './modal';
 import { Carousel } from './carousel';
 export const FirstSectionHome = () => {
-    const {product, AddToCard , Heart} = useContext(MyContext)
+    const { product, AddToCard, Heart } = useContext(MyContext)
 
     const navigate = useNavigate();
 
 
     const productrate5 = product.filter(element => (element.rate == 5 && element.category == "sale"))
     let pproduct = [...productrate5.slice(0, 4)]
+
+    let [pick, setPick] = useState("Featured")
+    console.log(`pick array 1 ${pick}`);
+    // setPick(picktype[0])
+
+    
+
+    const Filterpick = (parames) => {
+
+        let picktype = []
+        parames.forEach(element => {
+            
+            if (picktype.includes(element.picktype)) {
+                // alert("deja kain")
+                
+            }else{
+                picktype.push(element.picktype)
+            }
+        });
+        console.log(picktype);
+        
+    }
+
+    useEffect(()=>{
+        Filterpick(product)
+    } , [product , pick])
+   
+    console.log(`pick array 2 ${pick}`);
 
 
 
@@ -80,15 +108,15 @@ export const FirstSectionHome = () => {
             <section>
                 <h1 className='text-2xl font-bold text-center py-10 '>Top picks for your littleones</h1>
                 <div className='justify-center flex lg:gap-10 gap-6 lg:text-2xl text-xl'>
-                    <p>Featured</p>
-                    <p>Best seller</p>
-                    <p>New Arrivals</p>
+                    <p className={`cursor-pointer  ${pick == "Featured" ? "border-b-2 border-blue-600 " : ""}`} onClick={()=>{setPick("Featured")}}>Featured</p>
+                    <p className={`cursor-pointer  ${pick == "Best seller" ? "border-b-2 border-blue-600 " : ""}`} onClick={()=>{setPick("Best seller")}}>Best seller</p>
+                    <p className={`cursor-pointer  ${pick == "New Arrivals" ? "border-b-2 border-blue-600 " : ""}`} onClick={()=>{setPick("New Arrivals")}}>New Arrivals</p>
                 </div>
                 <div className='flex flex-wrap lg:pl-16 pl-10 lg:gap-4 gap-8 py-10'>
                     {
                         product.map((element, id) =>
                             <>
-                                <div className={element.id > 8 ? "hidden" : ""}>
+                                <div className={element.picktype != pick ? "hidden" : ""}>
                                     <div className=' rounded-lg  lg:w-[22vw] w-[80vw]   relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2 z-10'>
@@ -137,17 +165,17 @@ export const FirstSectionHome = () => {
                                     <div className=' rounded-lg  lg:w-[22vw] w-[80vw]   relative'  >
                                         <div className='absolute right-3  top-3 text-gray-400 '>
                                             <div className='flex flex-col gap-2'>
-                                            <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}
-                                            </button>                                    
-                                                        <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl cursor-pointer' /> <Example />
+                                                <button onClick={() => Heart(element)}>{!element.heart ? <FaRegHeart className='text-2xl cursor-pointer' /> : <FaHeart className='text-2xl text-red-600 cursor-pointer' />}
+                                                </button>
+                                                <button><SlBasket onClick={() => AddToCard(element.id)} className='text-2xl cursor-pointer' /> <Example />
                                                 </button>
                                             </div>
                                         </div>
                                         <div className='absolute left-2 top-2'>
                                             <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
                                         </div>
-                                        <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[22vw] w-[80vw]' src={element.image} alt="" />
-                                        <p onClick={() => { navigate(`/product/${element.id}`) }} className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
+                                        <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[22vw] w-[80vw] cursor-pointer' src={element.image} alt="" />
+                                        <p onClick={() => { navigate(`/product/${element.id}`) }} className='lg:pt-4 pt-1 font-medium text-xl cursor-pointer'>{element.productName}</p>
                                         <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                         <div className="">
                                             <div className='pt-4 flex gap-1'>

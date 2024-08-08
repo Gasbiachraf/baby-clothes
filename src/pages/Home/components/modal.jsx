@@ -32,7 +32,7 @@ export default function Example() {
                                     
                                     <div className=" flex flex-col items-center lg:pl-0 pl-4">
                                         <p className="lg:text-2xl text-lg  lg:pb-4 text-black">
-                                            {productmodal.length != 0 ? `${productmodal[0].productName} ${productmodal[0].id} ` : ""}
+                                            {productmodal.length != 0 ? productmodal[0].quantitybuy < 10 ? `0${productmodal[0].quantitybuy} x ${productmodal[0].productName} ` : `${productmodal[0].quantitybuy} x ${productmodal[0].productName} `  : ""}
                                         </p>
                                         <p className='lg:text-xl text-lg font-semibold text-green-500'>Add to cart successfully</p>
                                     </div>

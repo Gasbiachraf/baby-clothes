@@ -39,6 +39,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 2,
@@ -53,6 +54,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 3,
@@ -67,6 +69,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 4,
@@ -81,6 +84,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 5,
@@ -95,6 +99,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 6,
@@ -109,6 +114,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 7,
@@ -123,6 +129,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 8,
@@ -137,6 +144,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Featured",
         },
         {
             id: 9,
@@ -151,6 +159,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 10,
@@ -165,6 +174,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 11,
@@ -179,6 +189,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 12,
@@ -193,6 +204,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 13,
@@ -207,6 +219,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 14,
@@ -221,6 +234,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "Best seller",
         },
         {
             id: 15,
@@ -235,6 +249,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "New Arrivals",
         },
         {
             id: 16,
@@ -249,6 +264,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "New Arrivals",
         },
         {
             id: 17,
@@ -263,6 +279,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "New Arrivals",
         },
         {
             id: 18,
@@ -277,6 +294,7 @@ export const MyProvider = ({ children }) => {
             Stock: true,
             quantitybuy: 1,
             heart: false,
+            picktype : "New Arrivals",
         },
     ])
 

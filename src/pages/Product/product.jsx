@@ -209,8 +209,8 @@ export const ProductPage = () => {
                                                 <div className='absolute left-2 top-2'>
                                                     <p className={element.category == "sale" ? "block bg-red-400 rounded-full py-1 px-4 text-sm text-white font-semibold" : "hidden "}>SALE</p>
                                                 </div>
-                                                <img className='lg:w-[20vw] w-[80vw]' src={element.image} alt="" />
-                                                <p className='lg:pt-4 pt-1 font-medium text-xl'>{element.productName}</p>
+                                                <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[20vw] w-[80vw] cursor-pointer' src={element.image} alt="" />
+                                                <p onClick={() => { navigate(`/product/${element.id}`) }} className='lg:pt-4 pt-1 font-medium text-xl cursor-pointer'>{element.productName}</p>
                                                 <p className={element.oldprice != 0 ? "text-green-500 text-xl" : "text-black text-xl"}>${element.price}.00 <span className={element.oldprice == 0 ? "hidden" : "text-black line-through text-base"}>${element.oldprice}.00</span></p>
                                                 <div className="">
                                                     <div className='pt-4 flex gap-1'>

@@ -103,7 +103,7 @@ export const FirstSectionShop = () => {
                                         <div className='flex items-center gap-2'>
                                             <img onClick={() => { navigate(`/product/${element.id}`) }} className='lg:w-[35%] cursor-pointer' src={element.image} alt="" />
                                             <div className='flex flex-col '>
-                                                <p className='text-lg font-semibold'>{element.productName}</p>
+                                                <p onClick={() => { navigate(`/product/${element.id}`) }} className='text-lg font-semibold cursor-pointer'>{element.productName}</p>
                                                 <p className='font-bold text-xl'>${element.price}.00</p>
                                                 <div className=' flex gap-1 pt-2'>
                                                     {element.rate == 0 ? <CiStar className='text-yellow-400 text-2xl' /> : <FaStar className='text-yellow-400 text-xl' />}
