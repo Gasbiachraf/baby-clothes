@@ -56,17 +56,17 @@ const Header = () => {
 
             {/* navbar  */}
 
-            <div className=" flex my-6 justify-around items-center max-[430px]:z-50  max-[430px]:top-0 max-[430px]:inset-x-0 bg-alpha lg:py-5 relative">
+            <div className=" flex my-6 justify-around items-center max-[430px]:z-50  max-[430px]:top-0 max-[430px]:inset-x-0 bg-alpha  relative">
                 <img onClick={() => navigate('/')} src={image3} className="lg:w-32 w-24 cursor-pointer" alt="" />
                 <div
                     className={`flex lg:gap-16 lg:px-0 px-4 gap-4 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-2 ${isOpen ? " mt-72 duration-500  shadow-lg p-2  bg-white " : "max-[430px]:hidden  "
                         }`}
                 >
-                    <Link to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
-                    <Link to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
-                    <Link to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
-                    <Link to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
-                    <Link to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
+                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
+                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
+                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
+                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
+                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
                 </div>
                 <div className="flex gap-4 items-center">
                     <div onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">
@@ -101,8 +101,8 @@ const Header = () => {
             </div>
 
             <div className="">
-                <div className={droppanier ? "absolute duration-300 bg-blue-600 rounded-xl lg:w-[26vw] w-[96vw] lg:h-[74vh] h-[84vh] right-2 top-0 lg:mt-40 mt-20  lg:ml-0 ml-2  z-30 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[80vh] h-[84vh]  duration-300 top-0 lg:mt-40 mt-20 rounded-xl right-2   z-30  "}>
-                    <div className={droppanier ? "flex flex-col gap-2  overflow-auto invisible-scrollbar  lg:h-[63vh] h-[70vh] pb-20 " : 'hidden'}>
+                <div className={droppanier ? "absolute duration-300 bg-blue-600 rounded-xl lg:w-[26vw] w-[96vw] lg:h-[79vh] h-[84vh] right-2 top-0 lg:mt-32 mt-20  lg:ml-0 ml-2  z-30 p-2 overflow-hidden " : "absolute lg:w-[0vw] lg:h-[80vh] h-[84vh]  duration-300 top-0 lg:mt-40 mt-20 rounded-xl right-2   z-30  "}>
+                    <div className={droppanier ? "flex flex-col gap-2  overflow-auto invisible-scrollbar  lg:h-[68vh] h-[70vh] pb-20 border-b-2" : 'hidden'}>
 
                         {
                             panier.map((element, id) => <>
