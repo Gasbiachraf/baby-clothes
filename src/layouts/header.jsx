@@ -36,9 +36,12 @@ const Header = () => {
 
     let location = useLocation()
 
+    let widwindow = 
+
     useEffect(() => {
         window.scrollTo(0,0)
     }, [location])
+
 
     return (
         <div className="">
@@ -62,11 +65,11 @@ const Header = () => {
                     className={`flex lg:gap-16 lg:px-0 px-4 gap-4 max-[430px]:absolute  max-[430px]:flex-col duration-500 max-[430px]:bg-alpha max-[430px]:inset-x-0 max-[430px]:py-2 ${isOpen ? " mt-72 duration-500  shadow-lg p-2  bg-white " : "max-[430px]:hidden  "
                         }`}
                 >
-                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
-                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
-                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
-                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
-                    <Link onClick={()=>setIsOpen(!isOpen)} to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
+                    <Link onClick={()=>window.screen.width <= 430 ? setIsOpen(!isOpen) : ""}  to={"/"} className="cursor-pointer hover:text-teta text-lg font-semibold">Home</Link>
+                    <Link onClick={()=>window.screen.width <= 430 ? setIsOpen(!isOpen) : ""}  to={"/shop"} className="cursor-pointer hover:text-teta text-lg font-semibold">Shop</Link>
+                    <Link onClick={()=>window.screen.width <= 430 ? setIsOpen(!isOpen) : ""} to={"/contact"} className="cursor-pointer hover:text-teta text-lg font-semibold">Contact</Link>
+                    <Link onClick={()=>window.screen.width <= 430 ? setIsOpen(!isOpen) : ""} to={"/blog"} className="cursor-pointer hover:text-teta text-lg font-semibold">Blog</Link>
+                    <Link onClick={()=>window.screen.width <= 430 ? setIsOpen(!isOpen) : ""} to={"/faq"} className="cursor-pointer hover:text-teta text-lg font-semibold">FAQ's</Link>
                 </div>
                 <div className="flex gap-4 items-center">
                     <div onClick={() => setDroppanier(!droppanier)} className="relative cursor-pointer">
